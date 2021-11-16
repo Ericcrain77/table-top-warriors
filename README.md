@@ -2,7 +2,7 @@
 
 Deployed Application: 
 
-GitHub Repository: 
+GitHub Repository: https://github.com/Ericcrain77/table-top-warriors
 
 ## Table of Contents
 * [Description](#description)
