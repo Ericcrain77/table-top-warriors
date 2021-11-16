@@ -1,0 +1,31 @@
+{
+  "name": "table_top_warriors",
+  "version": "1.0.0",
+  "description": "Deployed Application:",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest",
+    "seed": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ericcrain77/table_top_warriors.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ericcrain77/table_top_warriors/issues"
+  },
+  "homepage": "https://github.com/Ericcrain77/table_top_warriors#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^6.0.1",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.9.0"
+  }
+}
