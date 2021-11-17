@@ -1,5 +1,6 @@
 const User = require("./User");
 const Game = require("./Game");
+const Deck = require("./Deck");
 
 //TABLE RELATIONSHIPS WILL GO HERE
 User.hasMany(Game, {
@@ -10,4 +11,4 @@ User.hasMany(Deck, {
     foreignKey: 'deck_owner'
 });
 
-module.exports = {User, Game};
+module.exports = {User, Game, Deck};
