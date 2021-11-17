@@ -19,7 +19,7 @@ const gameData = [
     },
     {
         host_id: 5,
-        lobby_name: "jnachos's game room"
+        lobby_name: "nachos's game room"
     },
     {
         host_id: 6,

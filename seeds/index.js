@@ -1,5 +1,6 @@
 const seedUsers = require("./user-seeds");
 const seedGames = require("./game-seeds");
+const seedDecks = require("./deck-seeds");
 //other seeds go here
 
 
@@ -14,6 +15,9 @@ const seedAll = async () => {
 
     await seedGames();
     console.log("\n----- GAMES SEEDED -----\n");
+
+    await seedDecks();
+    console.log("\n----- DECKS SEEDED -----\n");
 
     //other seed functions will go here
 };
