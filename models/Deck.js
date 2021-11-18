@@ -25,7 +25,15 @@ Deck.init(
                 model: 'user',
                 key: 'id'
             }
-        }
+        },
+        game_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'game',
+                key: 'id'
+            }
+        },
     },
     {
         sequelize,
