@@ -1,6 +1,7 @@
 const User = require("./User");
 const Game = require("./Game");
 const Deck = require("./Deck");
+const Card = require('./Card');
 
 //TABLE RELATIONSHIPS WILL GO HERE
 User.hasMany(Game, {
@@ -19,4 +20,13 @@ Deck.belongsTo(User, {
     foreignKey: "deck_owner"
 });
 
-module.exports = {User, Game, Deck};
+// A card belongs to a deck
+// Card.belongsTo(Deck, {
+
+// })
+// A deck has many cards
+// Deck.hasMany(Card, {
+
+// })
+
+module.exports = {User, Game, Deck, Card};
