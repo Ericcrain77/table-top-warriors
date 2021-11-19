@@ -5,10 +5,10 @@ const gameData = [
         game_name: 'Magic: The Gathering'
     },
     {
-        game_name: 'Pokemon'
+        game_name: 'TuGiOh!'
     },
     {
-        game_name: 'YuGiOh!'
+        game_name: 'Pokemon'
     }
 ]
 

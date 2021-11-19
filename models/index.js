@@ -35,12 +35,12 @@ Game.hasMany(Deck, {
     foreignKey: 'game_id'
 });
 
-// Each game (i.e. Magic, Pokemon, YuHiOh) has many cards////////////////////////////
+// Each game (i.e. Magic, Pokemon, YuHiOh) has many cards
 Game.hasMany(Card, {
     foreignKey: 'game_id'
 });
 
-// Each card belongs to a game///////////////////////////////
+// Each card belongs to a game
 Card.belongsTo(Game, {
     foreignKey: 'id'
 });
