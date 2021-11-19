@@ -326,3 +326,7 @@ const cardData = [
         game_id: 3
     }
 ]
+
+const seedCards = () => Card.bulkCreate(cardData);
+
+module.exports = seedCards;
