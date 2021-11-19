@@ -14,15 +14,8 @@ Game.init(
             primaryKey: true,
             autoIncrement: true
         },
-        host_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'user',
-                key: 'id'
-            }
-        },
-        lobby_name: {
+        // Pokemon, YuGiOh!, or Magic: The Gathering
+        game_name: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true
