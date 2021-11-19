@@ -5,54 +5,23 @@ const Card = require('./Card');
 
 // TABLE RELATIONSHIPS GO HERE
 
-// User has a multitude of decks that belong to them
-User.hasMany(Deck, {
-    foreignKey: 'deck_owner'
-});
-
-// User has a multitude of cards that belong to them
-User.hasMany(Card, {
-    foreignKey: 'card_owner'
-});
-
-// Each deck belongs to a user
-Deck.belongsTo(User, {
-    foreignKey: 'id'
-});
-
-// Each deck belongs to a certain game (i.e. Magic, Pokemon, YuHiOh)
-Deck.belongsTo(Game, {
-    foreignKey: 'id'
-});
+// Each deck belongs to a certain game (i.e. Magic, Pokemon, YuGiOh)
+Deck.belongsTo(Game, {});
 
 // Each deck has a multitude of cards
-Deck.hasMany(Card, {
-    foreignKey: 'deck_id'
-});
+Deck.hasMany(Card, {});
 
-// Each game (i.e. Magic, Pokemon, YuHiOh) has many decks
-Game.hasMany(Deck, {
-    foreignKey: 'game_id'
-});
+// Each game (i.e. Magic, Pokemon, YuGiOh) has many decks
+Game.hasMany(Deck, {});
 
-// Each game (i.e. Magic, Pokemon, YuHiOh) has many cards
-Game.hasMany(Card, {
-    foreignKey: 'game_id'
-});
+// Each game (i.e. Magic, Pokemon, YuGiOh) has many cards
+Game.hasMany(Card, {});
 
 // Each card belongs to a game
-Card.belongsTo(Game, {
-    foreignKey: 'id'
-});
+Card.belongsTo(Game, {});
 
 // Each card belongs to a deck
-Card.belongsTo(Deck, {
-    foreignKey: 'deck_id'
-})
+Card.belongsTo(Deck, {});
 
-// Each card belongs to a user
-Card.belongsTo(User, {
-    foreignKey: 'id'
-});
 
 module.exports = {User, Game, Deck, Card};
