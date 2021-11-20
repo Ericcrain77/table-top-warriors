@@ -4,6 +4,9 @@ const Deck = require("./Deck");
 const Card = require('./Card');
 
 // TABLE RELATIONSHIPS GO HERE
+Deck.belongsTo(User, {
+    foreignKey: 'id'
+});
 
 // Each deck belongs to a certain game (i.e. Magic, Pokemon, YuGiOh)
 Deck.belongsTo(Game, {});

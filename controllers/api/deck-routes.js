@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Deck, User} = require('../../models');
+const {Deck, User, Card} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 
@@ -29,9 +29,12 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['id', 'username', 'email']
+                attributes: ['username', 'email']
             },
-            // card information soon
+            {
+                model: Card,
+                attributes: ['id', 'card_name']
+            }
         ]
     })
     .then(dbDeckData => {
@@ -51,7 +54,8 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     Deck.create({
         deck_name: req.body.deck_name,
-        deck_owner: req.session.deck_owner
+        deck_owner: req.session.deck_owner,
+        game_id: req.body.game_id
     })
     .then(dbDeckData => res.json(dbDeckData))
     .catch(err => {
@@ -65,7 +69,6 @@ router.put('/:id', withAuth, (req, res) => {
     Deck.update(
         {
             deck_name: req.body.deck_name
-            // cards information soon
         },
         {
             where: {
