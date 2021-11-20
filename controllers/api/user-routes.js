@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const {User, Deck, Card} = require("../../models");
-//login authentication will go here
+const withAuth = require('../../utils/auth');
 
 //route to get all users
 router.get("/", (req, res) => {
@@ -46,6 +46,29 @@ router.get('/:id', (req, res) => {
             return;
         }
         res.json(dbUserData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+//route to create a new user
+router.post('/', (req, res) => {
+    User.create({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+    })
+    .then(dbUserData => {
+        console.log(dbUserData)
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+
+            res.json(dbUserData);
+        });
     })
     .catch(err => {
         console.log(err);

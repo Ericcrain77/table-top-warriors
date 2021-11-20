@@ -14,17 +14,17 @@ const PORT = process.env.PORT || 3001;
 const sequelize = require("./config/connection");
 
 //set up session (leaving this commented out until we have login and logout functionality written)
-// const SequelizeStore = require("connect-session-sequelize")(session.Store);
-// const sess = {
-//     secret: "Honor of a warrior",
-//     cookie: {},
-//     resave: false,
-//     saveUninitialized: true,
-//     store: new SequelizeStore({
-//         db: sequelize
-//     })
-// };
-// app.use(session(sess));
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const sess = {
+    secret: "Honor of a warrior",
+    cookie: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+        db: sequelize
+    })
+};
+app.use(session(sess));
 
 //set handlebars as default template engine
 const hbs = exphbs.create({});
