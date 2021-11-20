@@ -94,6 +94,24 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
-
+//route to delete a card
+router.delete('/:id', withAuth, (req, res) => {
+    Card.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    .then(dbCardData => {
+        if (!dbCardData) {
+            res.status(404).json({ message: 'No card found with this id' });
+            return;
+        }
+        res.json(dbCardData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 module.exports = router;
