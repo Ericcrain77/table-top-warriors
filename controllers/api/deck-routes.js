@@ -54,7 +54,7 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     Deck.create({
         deck_name: req.body.deck_name,
-        deck_owner: req.session.deck_owner,
+        user_id: req.session.user_id,
         game_id: req.body.game_id
     })
     .then(dbDeckData => res.json(dbDeckData))
