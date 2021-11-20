@@ -53,4 +53,19 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//route to create a new card
+router.post('/', withAuth, (req, res) => {
+    Card.create({
+        card_name: req.body.card_name,
+        user_id: req.body.user_id,
+        deck_id: req.body.deck_id,
+        game_id: req.body.game_id
+    })
+    .then(dbCardData => res.json(dbCardData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 module.exports = router;
