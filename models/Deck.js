@@ -18,7 +18,7 @@ Deck.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        deck_owner: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
