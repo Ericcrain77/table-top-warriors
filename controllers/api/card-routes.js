@@ -68,4 +68,32 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
+//route to update a cards data
+router.put('/:id', withAuth, (req, res) => {
+    Card.update(
+        {
+            card_name: req.body.card_name,
+            deck_id: req.body.deck_id
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+    .then(dbCardData => {
+        if (!dbCardData) {
+            res.status(404).json({ message: 'No card found with this id' });
+            return;
+        }
+        res.json(dbCardData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+
+
 module.exports = router;
