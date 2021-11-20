@@ -156,6 +156,7 @@ body {
     padding: 5px;
     width: 50%;
     border-radius: 8px;
+    border: 0px;
 }
 
 #home-search-btn {
