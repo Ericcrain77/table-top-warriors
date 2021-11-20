@@ -25,13 +25,34 @@ body {
     background-color: var(--tertiary-color);
     border-bottom: 1px solid var(--quinary-color);
     height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #header-logo {
     display: flex;
     padding: 10px 0 10px 15px;
     height: auto;
+    width: 15%;
+}
+
+#login-signup-btn {
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    font-size: 24px;
+    padding: 10px;
+    margin-right: 20px;
+    border: 4px solid var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    height: auto;
     width: auto;
+}
+
+#login-signup-btn:hover {
+    background-color: var(--quinary-color);
+    color: var(--quaternary-color);
 }
 
 .forms {
@@ -114,4 +135,66 @@ body {
 
 .signup-form button:hover {
     opacity: 1;
+}
+
+.home-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align:center;
+    margin: 150px;
+    padding: 40px;
+    border: 4px solid var(--quaternary-color);
+    border-radius: 15px;
+    background-color: var(--tertiary-color);
+}
+
+#search-box {
+    font-size: 18px;
+    color: var(--quaternary-color);
+    padding: 5px;
+    width: 50%;
+    border-radius: 8px;
+}
+
+#home-search-btn {
+    margin-left: 10px;
+    font-size: 18px;
+    padding: 5px;
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 5px;
+    text-align: center;
+    display: block;
+}
+
+#home-search-btn:hover {
+    color: var(--quaternary-color);
+    background-color: var(--quinary-color);
+}
+
+.home-game-logos {
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    align-items: center;
+    align-content: center;
+}
+
+#home-pokemon {
+    height: 20%;
+    width: 20%;
+}
+
+#home-mtg {
+    height: 20%;
+    width: 20%;
+}
+
+#home-yugioh {
+    height: 20%;
+    width: 20%;
 }
