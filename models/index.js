@@ -50,5 +50,9 @@ Card.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
+// Each card belond to a specific deck
+Card.belongsTo(Deck, {
+    foreignKey: 'deck_id'
+});
 
 module.exports = {User, Game, Deck, Card};
