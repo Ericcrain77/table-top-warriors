@@ -1,17 +1,16 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const {User, Game, Deck} = require("../models");
-//withAuth will go here once we have created the session
-// const withAuth = require("../utils/auth");
+const withAuth = require("../utils/auth");
 
 
-//render user-home. withAuth will be added to this
-router.get("/", (req, res) => {
+//render user-home
+router.get("/", withAuth, (req, res) => {
     res.render("user-home");
 });
 
-//render deck collection page. withAuth will be added to this
-router.get("/collection", (req, res) => {
+//render deck collection page
+router.get("/collection", withAuth, (req, res) => {
     //WILL LOOK SOMETHING LIKE THIS ONCE DECK MODEL AND SESSION ARE FINISHED
     // Deck.findAll({
     //     where: {
@@ -32,13 +31,13 @@ router.get("/collection", (req, res) => {
     res.render("collection");
 });
 
-//render deck creation page. withAuth will be added to this
-router.get("/create", (req, res) => {
+//render deck creation page
+router.get("/create", withAuth, (req, res) => {
     res.render("deck-creation");
 })
 
-//render deck edit page. withAuth will be added to this
-router.get("/edit/:id", (req, res) => {
+//render deck edit page
+router.get("/edit/:id", withAuth, (req, res) => {
     //WILL LOOK SOMETHING LIKE THIS ONCE DECK MODEL AND SESSION ARE FINISHED
     // Deck.findOne({
     //     where: {
