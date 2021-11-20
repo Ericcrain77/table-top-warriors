@@ -15,7 +15,14 @@
 				<image src="/images/TTW-Header-Logo.png" alt="Table Top Warriors Logo 2" href="/">
 			</h1>
 			<nav>
-				{{!-- IF STATEMENT FOR DISPLAYING LOGIN OR LOGOUT BUTTON WILL GO HERE --}}
+				{{#if loggedIn}}
+				{{!-- If user is logged in display logout button --}}
+				<a href="/dashboard">Dashboard</a>
+				<button id="logout">Logout</button>
+				{{else}}
+				{{!-- If user is not logged in display link to login page --}}
+				<a href="/login">Login</a>
+				{{/if}}
 			</nav>
 		</header>
 		<main>
@@ -25,6 +32,10 @@
 			Thanks for visiting!
 		</footer>
 	</div>
+	{{#if loggedIn}}
+	{{!-- if user is logged in attatch front end js for logging out --}}
+	<script src="/javascript/logout.js"></script>
+	{{/if}}
 </body>
 
 </html>
