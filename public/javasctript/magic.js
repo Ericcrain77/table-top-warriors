@@ -15,6 +15,9 @@ const cardname = document.querySelector('textarea[name="card-name"]').value.trim
           .then(function(response) {
             response.json().then(function(data) {
               console.log(data);
+              console.log(data.cards[0].name);
+              console.log(data.cards[0].toughness);
+              console.log(data.cards[0].type);
             })
           }); 
     };

@@ -15,6 +15,9 @@ const pokemon_name = document.querySelector('textarea[name="card-name"]').value.
           .then(function(response) {
             response.json().then(function(data) {
               console.log(data);
+              console.log(data.data[0].name)
+              console.log(data.data[0].hp)
+              console.log(data.data[0].types[0])
             })
           }); 
     };
