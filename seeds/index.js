@@ -14,14 +14,14 @@ const seedAll = async () => {
     await seedUsers();
     console.log("\n----- USERS SEEDED -----\n");
 
-    await seedGames();
-    console.log("\n----- GAMES SEEDED -----\n");
+    // await seedGames();
+    // console.log("\n----- GAMES SEEDED -----\n");
 
     await seedDecks();
     console.log("\n----- DECKS SEEDED -----\n");
 
-    await seedCards();
-    console.log("\n----- CARDS SEEDED -----\n");
+    // await seedCards();
+    // console.log("\n----- CARDS SEEDED -----\n");
 
     console.log("\n----- SEEDS COMPLETE -----\n")
 

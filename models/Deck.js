@@ -18,6 +18,14 @@ Deck.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        game: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        cards: {
+            type: DataTypes.ARRAY,
+            allowNull: false
+        },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -25,15 +33,7 @@ Deck.init(
                 model: 'user',
                 key: 'id'
             }
-        },
-        game_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'game',
-                key: 'id'
-            }
-        },
+        }
     },
     {
         sequelize,

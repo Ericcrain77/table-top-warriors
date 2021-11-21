@@ -29,11 +29,7 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['username', 'email']
-            },
-            {
-                model: Card,
-                attributes: ['id', 'card_name']
+                attributes: ['username']
             }
         ]
     })
@@ -54,8 +50,9 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     Deck.create({
         deck_name: req.body.deck_name,
-        user_id: req.session.user_id,
-        game_id: req.body.game_id
+        game: req.body.game,
+        cards: req.body.cards,
+        user_id: req.session.user_id
     })
     .then(dbDeckData => res.json(dbDeckData))
     .catch(err => {
@@ -68,7 +65,9 @@ router.post('/', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
     Deck.update(
         {
-            deck_name: req.body.deck_name
+            deck_name: req.body.deck_name,
+            game: req.body.game,
+            cards: req.body.cards
         },
         {
             where: {
