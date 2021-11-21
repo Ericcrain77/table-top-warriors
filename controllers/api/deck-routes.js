@@ -51,7 +51,6 @@ router.post('/', withAuth, (req, res) => {
     Deck.create({
         deck_name: req.body.deck_name,
         game: req.body.game,
-        cards: req.body.cards,
         user_id: req.session.user_id
     })
     .then(dbDeckData => res.json(dbDeckData))
@@ -66,8 +65,7 @@ router.put('/:id', withAuth, (req, res) => {
     Deck.update(
         {
             deck_name: req.body.deck_name,
-            game: req.body.game,
-            cards: req.body.cards
+            game: req.body.game
         },
         {
             where: {

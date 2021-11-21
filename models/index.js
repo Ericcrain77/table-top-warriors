@@ -2,6 +2,9 @@ const User = require("./User");
 // const Game = require("./Game");
 const Deck = require("./Deck");
 const Card = require('./Card');
+const Magic = require("./Magic");
+const Yugi = require("./Yugi");
+const Poke = require("./Poke");
 
 // TABLE RELATIONSHIPS GO HERE
 
@@ -26,6 +29,30 @@ Deck.hasMany(Card, {
 
 Card.belongsTo(Deck, {
     foreignKey: "deck_id"
+});
+
+Card.hasMany(Magic, {
+    foreignKey: "card_id"
+});
+
+Magic.belongsTo(Card, {
+    foreignKey: "card_id"
+});
+
+Card.hasMany(Yugi, {
+    foreignKey: "card_id"
+});
+
+Yugi.belongsTo(Card, {
+    foreignKey: "card_id"
+});
+
+Card.hasMany(Poke, {
+    foreignKey: "card_id"
+});
+
+Poke.belongsTo(Card, {
+    foreignKey: "card_id"
 });
 
 // Each deck belongs to a certain game (i.e. Magic, Pokemon, YuGiOh)
@@ -66,5 +93,8 @@ Card.belongsTo(Deck, {
 module.exports = {User, 
                 // Game, 
                 Deck, 
-                Card
+                Card,
+                Magic,
+                Yugi,
+                Poke
             };

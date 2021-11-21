@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Deck, User, Card, Game} = require('../../models');
+const {Deck, User, Card, Magic, Yugi, Poke} = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //route to get all cards
@@ -11,8 +11,44 @@ router.get('/', (req, res) => {
                 attributes: ['deck_name']
             },
             {
-                model: Game,
-                attributes: ['game_name']
+                model: Magic,
+                attributes: [
+                    "manaCostMagic",
+                    "cmcMagic",
+                    "colorsMagic",
+                    "colorIdentityMagic",
+                    "typeMagic",
+                    "textMagic",
+                    "card_id"
+                ]
+            },
+            {
+                model: Yugi,
+                attributes: [
+                    "levelYugi",
+                    "attributeYugi",
+                    "raceYugi",
+                    "typeYugi",
+                    "descYugi",
+                    "atkYugi",
+                    "defYugi",
+                    "card_id"
+                ]
+            },
+            {
+                model: Poke,
+                attributes: [
+                    "supertypePoke",
+                    "subtypesPoke",
+                    "hpPoke",
+                    "typesPoke",
+                    "evolvesToPoke",
+                    "abilitiesPoke",
+                    "attacksPoke",
+                    "weaknessesPoke",
+                    "retreatCostPoke",
+                    "card_id"
+                ]
             }
         ]
     })
