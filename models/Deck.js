@@ -22,10 +22,6 @@ Deck.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        cards: {
-            type: DataTypes.ARRAY,
-            allowNull: false
-        },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
