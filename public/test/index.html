@@ -8,8 +8,67 @@
 </head>
 
 <body>
-
+    <div id="header">
+        <div id="header-logo">
+            <a href="/">
+                <image src="../images/TTW-Header-Logo.png" alt="Table Top Warriors Logo 2" />
+            </a>
+        </div>
+    </div>
     
+    <div class="dropdown">
+        <buttonon click="myFunction()" class="dropbtn">Game:</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="#">Yu-Gi-Oh</a>
+            <a href="#">Pokémon</a>
+            <a href="#">Magic: The Gathering</a>
+        </div>
+    </div>
+    
+    <div>
+        <label>Deck Name:</label>
+        <input />
+    </div>
+    
+    <div>
+        <label>Card Search:</label>
+        <input placeholder="Type a word, phrase, or full card name and hit enter to search"/>
+        <button>Enter</button>
+    </div>
+    
+    <div>
+        {{!-- Card Search Box --}}
+    </div>
+    
+    <div>
+        <h2>Decklist:</h2>
+        <div>
+            {{!-- Decklist box --}}
+        </div>
+    </div>
+    
+    <button>Submit Deck</button>
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
     <!-- <div id="header">
         <div id="header-logo">
             <a href="/">
