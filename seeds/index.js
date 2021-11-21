@@ -14,9 +14,6 @@ const seedAll = async () => {
     await seedUsers();
     console.log("\n----- USERS SEEDED -----\n");
 
-    // await seedGames();
-    // console.log("\n----- GAMES SEEDED -----\n");
-
     await seedDecks();
     console.log("\n----- DECKS SEEDED -----\n");
 
@@ -24,8 +21,6 @@ const seedAll = async () => {
     console.log("\n----- CARDS SEEDED -----\n");
 
     console.log("\n----- SEEDS COMPLETE -----\n")
-
-    //other seed functions will go here
 };
 
 seedAll();
