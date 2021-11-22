@@ -68,11 +68,47 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Deck,
-                attributes: ['deck_name'],
+                attributes: ['deck_name']
             },
             {
-                model: User,
-                attributes: ['username']
+                model: Magic,
+                attributes: [
+                    "manaCostMagic",
+                    "cmcMagic",
+                    "colorsMagic",
+                    "colorIdentityMagic",
+                    "typeMagic",
+                    "textMagic",
+                    "card_id"
+                ]
+            },
+            {
+                model: Yugi,
+                attributes: [
+                    "levelYugi",
+                    "attributeYugi",
+                    "raceYugi",
+                    "typeYugi",
+                    "descYugi",
+                    "atkYugi",
+                    "defYugi",
+                    "card_id"
+                ]
+            },
+            {
+                model: Poke,
+                attributes: [
+                    "supertypePoke",
+                    "subtypesPoke",
+                    "hpPoke",
+                    "typesPoke",
+                    "evolvesToPoke",
+                    "abilitiesPoke",
+                    "attacksPoke",
+                    "weaknessesPoke",
+                    "retreatCostPoke",
+                    "card_id"
+                ]
             }
         ]
     })
