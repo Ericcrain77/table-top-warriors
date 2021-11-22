@@ -217,7 +217,7 @@ router.post('/', withAuth, (req, res) => {
 // });
 
 //route to delete a card
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Card.destroy({
         where: {
             id: req.params.id
