@@ -1,5 +1,4 @@
 const seedUsers = require("./user-seeds");
-const seedGames = require("./game-seeds");
 const seedDecks = require("./deck-seeds");
 const seedCards = require('./card-seeds');
 //other seeds go here
