@@ -5,13 +5,12 @@ async function cardSearchHandler(event) {
 const cardname = document.querySelector('textarea[name="card-name"]').value.trim();
 
     if (cardname) {
-    var pokeapi = "https://api.pokemontcg.io/v2/cards?q=name:" + cardname + " set.id:base1"
-          fetch(pokeapi, {
-              "method": "GET",
-              "headers": {
-                  "x-api-key": "ea75f934-a912-40ea-b15f-25a000c1f799", 
-              }
-          })
+        var magicapi = "https://api.magicthegathering.io/v1/cards?name=" + cardname
+      
+        fetch(magicapi, {
+            "method": "GET"
+        })
+
           .then(function(response) {
             response.json().then(function(data) {
               console.log(data);
