@@ -49,6 +49,14 @@ Magic.init(
                 model: "card",
                 key: "id"
             }
+        },
+        deck_id: {
+            type: DataTypes.INTEGER,
+            allowNUll: false,
+            references: {
+                model: 'deck',
+                key: 'id'
+            }
         }
     },
     {

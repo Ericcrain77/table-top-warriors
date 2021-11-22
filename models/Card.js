@@ -18,6 +18,10 @@ Card.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        game: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         deck_id: {
             type: DataTypes.INTEGER,
             allowNUll: false,

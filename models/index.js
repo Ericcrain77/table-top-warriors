@@ -25,6 +25,30 @@ Card.belongsTo(Deck, {
     foreignKey: "deck_id"
 });
 
+Deck.hasMany(Magic, {
+    foreignKey: "deck_id"
+});
+
+Magic.belongsTo(Deck, {
+    foreignKey: "deck_id"
+});
+
+Deck.hasMany(Yugi, {
+    foreignKey: "deck_id"
+});
+
+Yugi.belongsTo(Deck, {
+    foreignKey: "deck_id"
+});
+
+Deck.hasMany(Poke, {
+    foreignKey: "deck_id"
+});
+
+Poke.belongsTo(Deck, {
+    foreignKey: "deck_id"
+});
+
 Card.hasMany(Magic, {
     foreignKey: "card_id"
 });
