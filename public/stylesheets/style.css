@@ -55,6 +55,24 @@ body {
     color: var(--quaternary-color);
 }
 
+#logout-btn {
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    font-size: 24px;
+    padding: 10px;
+    margin-right: 20px;
+    border: 4px solid var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    height: auto;
+    width: auto;
+}
+
+#logout-btn:hover {
+    background-color: var(--quinary-color);
+    color: var(--quaternary-color);
+}
+
 .forms {
     display: flex;
     height: auto;
@@ -78,6 +96,7 @@ body {
     border-radius: 8px;
     align-items: center;
     padding: 48px 40px 48px 20px;
+    font-size: 18px;
 }
 
 .login-form label {
@@ -85,6 +104,11 @@ body {
     text-align: center;
     width: 136px;
     padding-bottom: 30px;
+}
+
+.login-form input {
+    width: 180px;
+    height: 22px;
 }
 
 .login-form button {
@@ -109,7 +133,8 @@ body {
     border: 4px solid var(--tertiary-color);
     border-radius: 8px;
     align-items: center;
-    padding: 20px 40px 20px 20px;
+    padding: 39px 40px 39px 20px;
+    font-size: 18px;
 }
 
 .signup-form label {
@@ -117,6 +142,11 @@ body {
     text-align: center;
     width: 136px;
     padding-bottom: 20px;
+}
+
+.signup-form input {
+    width: 180px;
+    height: 22px;
 }
 
 
@@ -234,3 +264,48 @@ body {
     background-color: var(--tertiary-color);
 }
 
+.new-deck-form {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--quinary-color);
+    border: 4px solid var(--tertiary-color);
+    border-radius: 8px;
+    width: 30%;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.new-deck-form label {
+    display: inline-block;
+    text-align: center;
+    width: 250px;
+    padding: 15px;
+}
+
+.new-deck-form select {
+    width: 180px;
+    height: 22px;
+}
+
+.new-deck-form input {
+    width: 180px;
+    height: 22px;
+}
+
+#create-deck-btn {
+    margin: 20px auto;
+    margin-bottom: 5px;
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 5px;
+    opacity: 0.6;
+    text-align: center;
+    display: block;
+}
+
+#create-deck-btn:hover {
+    opacity: 1;
+}
