@@ -26,9 +26,6 @@ router.get("/collection", withAuth, (req, res) => {
             loggedIn: true
         });
     })
-    .then(dbDeckData => {
-        res.json(dbDeckData);
-    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
