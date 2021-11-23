@@ -8,6 +8,12 @@
     <input />
 </div>
 
+{{#each cards as |card|}}
+    <div>
+        {{>card-info card}}
+    </div>
+{{/each}}
+
 <div>
     <label>Card Search:</label>
     <input name="card-name"/>

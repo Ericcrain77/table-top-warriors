@@ -1,1 +1,42 @@
-<h1>Hey it worked from card-info</h1>
+<div>
+    <section>
+        <div>
+            {{game}}
+            {{deck.deck_name}}
+            {{name}}
+            {{#if magic}}
+                {{magic.colorsMagic}}
+                {{magic.colorIdentityMagic}}
+                {{magic.manaCostMagic}}
+                {{magic.cmcMagic}}
+                {{magic.typeMagic}}
+                {{magic.textMagic}}
+            {{else if yugis}}
+                {{yugis.levelYugi}}
+                {{yugis.attributeYugi}}
+                {{yugis.raceYugi}}
+                {{yugis.typeYugi}}
+                {{yugis.descYugi}}
+                {{yugis.atkYug}}
+                {{yugis.defYugi}}
+            {{else}}
+                {{pokes.hpPoke}}
+                {{pokes.supertypePoke}}
+                {{pokes.typesPoke}}
+                {{pokes.subtypesPoke}}
+                {{pokes.evolvesToPoke}}
+                {{pokes.abilitiesPoke.name}}
+                {{pokes.abilitiesPoke.text}}
+                {{pokes.abilitiesPoke.type}}
+                {{pokes.attacksPoke.name}}
+                {{pokes.attacksPoke.cost}}
+                {{pokes.attacksPoke.convertedEnergyCost}}
+                {{pokes.attacksPoke.damage}}
+                {{pokes.attacksPoke.text}}
+                {{pokes.weaknessesPoke.type}}
+                {{pokes.weaknessesPoke.value}}
+                {{pokes.retreatCostPoke}}
+            {{/if}}
+        </div>
+    </section>
+</div>
