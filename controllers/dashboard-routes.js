@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const {User, Game, Deck} = require("../models");
+const {User, Game, Deck, Card} = require("../models");
 const withAuth = require("../utils/auth");
 
 
@@ -12,28 +12,41 @@ router.get("/", withAuth, (req, res) => {
 //render deck collection page
 router.get("/collection", withAuth, (req, res) => {
     //WILL LOOK SOMETHING LIKE THIS ONCE DECK MODEL AND SESSION ARE FINISHED
-    // Deck.findAll({
-    //     where: {
-    //         deck_owner: req.session.deck_owner
-    //     }
-    // })
-    // .then(dbDeckData => {
-    //     const decks = dbDeckData.map(deck => deck.get({plain: true}));
-    //     res.render("collection", {
-    //         decks,
-    //         loggedIn: true
-    //     });
-    // })
-    // .catch(err => {
-    //     console.log(err);
-    //     res.status(500).json(err);
-    // });
-    res.render("collection");
+    Deck.findAll({
+        where: {
+            user_id: req.session.user_id
+        }
+    })
+    .then(dbDeckData => {
+        const decks = dbDeckData.map(deck => deck.get({plain: true}));
+        res.render("collection", {
+            decks,
+            loggedIn: true
+        });
+        // Card.findAll({
+        //     where: {
+        //         deck_id: dbDeckData.id
+        //     }
+        // })
+        // .then(dbCardData => {
+        //     const cards = dbCardData.map(card => card.get({plain: true}));
+        //     res.render("collection", {
+        //         cards,
+        //         loggedIn: true
+        //     });
+        // })
+
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+    // res.render("collection");
 });
 
 //render deck creation page
 router.get("/create", withAuth, (req, res) => {
-    res.render("deck-creation");
+    res.render("deck-creation2");
 })
 
 //render deck edit page

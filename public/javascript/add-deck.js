@@ -2,7 +2,7 @@ async function deckCreationHandler(event) {
     event.preventDefault();
 
     const deck_name = document.querySelector('input[name="deck-name"]').value;
-    const game = document.querySelector('input[name="game-name"]').value;
+    const game = document.querySelector('select[name="game-name"]').value;
 
     const response = await fetch(`/api/decks`, {
         method: 'POST',
@@ -16,7 +16,7 @@ async function deckCreationHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('?????') //CHECK THIS ROUTE
+        document.location.replace('/dashboard/collection') //CHECK THIS ROUTE
     } else {
         alert(response.statusText);
     }
