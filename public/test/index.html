@@ -16,9 +16,9 @@
         </div>
     </div>
     
-    <div class="dropdown">
-        <buttonon click="myFunction()" class="dropbtn">Game:</button>
-        <div id="myDropdown" class="dropdown-content">
+    <div>
+        <buttonon>Game:</button>
+        <div>
             <a href="#">Yu-Gi-Oh</a>
             <a href="#">Pokémon</a>
             <a href="#">Magic: The Gathering</a>
@@ -48,26 +48,6 @@
     </div>
     
     <button>Submit Deck</button>
-
-    <script>
-        function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        // Close the dropdown menu if the user clicks outside of it
-        window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
 
     <!-- <div id="header">
         <div id="header-logo">
