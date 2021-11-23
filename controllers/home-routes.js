@@ -10,13 +10,13 @@ router.get("/", (req, res) => {
 //render login page
 router.get("/login", (req, res) => {
     //if user is logged in they are redirected to the homepage
-    //leave this commented out until session has been created
-    // if(req.session.loggedIn){
-    //     res.redirect("/");
-    //     return;
-    // }
+   
+    if(req.session.loggedIn){
+        res.redirect("/dashboard");
+        return;
+    }
 
     res.render("login");
-})
+});
 
 module.exports = router;
