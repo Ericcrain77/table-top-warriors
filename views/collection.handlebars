@@ -1,5 +1,22 @@
 <h1>Deck Collection</h1>
 
+{{#if decks.length}}
+<section>
+    <h2>Your Decks</h2>
+    <div>
+        {{#each decks as |deck|}}
+        <div>
+            {{> deck-info deck}}
+        </div>
+        <div>
+            <a href="/dashboard/edit/{{deck.id}}">View/Edit</a>
+
+        </div>
+        {{/each}}
+    </div>
+</section>
+{{/if}}
+
 <ul>
     <li>
         {{!-- Game Logo --}}
