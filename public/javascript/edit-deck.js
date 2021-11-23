@@ -25,4 +25,4 @@ async function deckEditHandler(event) {
     }
 }
 
-document.querySelector('.edit-deck-form').addEventListener('submit', deckEditHandler);
+//document.querySelector('.edit-deck-form').addEventListener('submit', deckEditHandler);
