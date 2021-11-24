@@ -19,6 +19,60 @@
         <!-- <button id="logout-btn">Log Out</button> -->
     </div>
 
+<!-- DECK EDIT -->
+    <section class="edit-screen">
+        <div>
+            <h2>Game:</h2>
+            <!-- handlebars tag for game logo deck is already built with -->
+        </div>
+
+        <div>
+            {{deck_name}}
+        </div>
+
+        <div>
+            <h4>Type a word, phrase, or full card name and hit enter to search</h4>
+            <label>Card Search:</label>
+            <input name="card-name"/>
+            <button>Enter</button>
+        </div>
+
+        <div>
+            <h2>Decklist:</h2>
+            <textarea name="decklist" class="decklist-box"></textarea>
+        </div>
+
+        <button>Edit Deck</button>
+    </section>
+
+
+<!-- DECK COLLECTION HANDLEBARS -->
+    <!-- <h1 id="dc">Deck Collection</h1>
+
+    {{#if decks.length}}
+    <section class="collection">
+        <div class="deck">
+            {{#each decks as |deck|}}
+            <div>
+                <image src="../images/Magic-The-Gathering-Logo.png" alt="Game Logo" id="deck-logo" />
+                {{game}}
+            </div>
+            <div id="deck-name">
+                <h4>{{deck_name}}</h4>
+            </div>
+                {{> deck-info deck}}
+            <div>
+                <button href="/dashboard/edit/{{deck.id}}" id="viewedit-btn">View/Edit</button>
+            </div>
+
+            <div>
+                <button id="delete-deck-btn">Delete</button>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/if}} -->
+
 <!-- DECK CREATION HANDLEBARS -->
     <!-- <div>
         <image src="../images/Table-Top-Warriors-Logo.png" alt="TTW Logo" id="main-logo" />
@@ -109,7 +163,8 @@
         </form>
     </section>
     
-    <script src="/javascript/login.js"></script>
-</body> -->
+    <script src="/javascript/login.js"></script> -->
+
+</body> 
 
 </html>
