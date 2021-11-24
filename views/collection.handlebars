@@ -1,4 +1,4 @@
-<h1>Deck Collection</h1>
+<!-- <h1>Deck Collection</h1>
 
 {{#if decks.length}}
 <section>
@@ -15,33 +15,25 @@
         {{/each}}
     </div>
 </section>
-{{/if}}
+{{/if}} -->
 
-<ul>
-    <li>
-        {{!-- Game Logo --}}
+<h1 id="dc">Deck Collection</h1>
 
-        {{!-- Deck Name --}}
+    {{#if decks.length}}
+    <section class="collection">
+        <div class="deck">
+            {{#each decks as |deck|}}
+            <div>
+                {{> deck-info deck}}
+            </div>
+            <div>
+                <button href="/dashboard/edit/{{deck.id}}" id="viewedit-btn">View/Edit</button>
+            </div>
 
-        <button>View/Edit</button>
-        <button>Delete Deck</button>
-    </li>
-
-    <li>
-        {{!-- Game Logo --}}
-
-        {{!-- Deck Name --}}
-
-        <button>View/Edit</button>
-        <button>Delete Deck</button>
-    </li>
-
-    <li>
-        {{!-- Game Logo --}}
-
-        {{!-- Deck Name --}}
-
-        <button>View/Edit</button>
-        <button>Delete Deck</button>
-    </li>
-</ul>
+            <div>
+                <button id="delete-deck-btn">Delete</button>
+            </div>
+            {{/each}} 
+        </div>
+    </section>
+    {{/if}}

@@ -18,10 +18,11 @@
 				{{#if loggedIn}}
 				{{!-- If user is logged in display logout button --}}
 				<a href="/dashboard">Dashboard</a>
-				<button id="logout">Logout</button>
+				<button id="logout-btn">Log Out</button>
 				{{else}}
 				{{!-- If user is not logged in display link to login page --}}
-				<a href="/login">Login</a>
+				<button id="login-signup-btn">Log In / Sign Up</button>
+				{{!-- <a href="/login">Login</a> --}}
 				{{/if}}
 			</nav>
 		</header>
