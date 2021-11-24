@@ -1,14 +1,16 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 
-const {Magic, Poke, Yugi, Deck, Card} = require("../models");
+const {Magic, Poke, Yugi, Deck, Card, User} = require("../models");
 
 const withAuth = require("../utils/auth");
 
 
 //render user-home
 router.get("/", withAuth, (req, res) => {
-    res.render("user-home");
+    res.render("user-home", {
+        loggedIn: true
+    });
 });
 
 //render deck collection page
@@ -35,7 +37,9 @@ router.get("/collection", withAuth, (req, res) => {
 
 //render deck creation page
 router.get("/create", withAuth, (req, res) => {
-    res.render("deck-creation2");
+    res.render("deck-creation2", {
+        loggedIn: true
+    });
 })
 
 //render deck edit page
