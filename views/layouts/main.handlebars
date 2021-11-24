@@ -9,33 +9,30 @@
 
 <body>
 	<div>
-		<header>
-			<h1>
-				<a href="/">Table Top Warriors</a>
-				<image src="/images/TTW-Header-Logo.png" alt="Table Top Warriors Logo 2" href="/">
-			</h1>
-			<nav>
-				{{#if loggedIn}}
-				{{!-- If user is logged in display logout button --}}
-				<a href="/dashboard">Dashboard</a>
-				<button id="logout">Logout</button>
-				{{else}}
-				{{!-- If user is not logged in display link to login page --}}
-				<a href="/login">Login</a>
-				{{/if}}
-			</nav>
-		</header>
+
+		<div id="header">
+			<div id="header-logo">
+				<a href="/">
+					<image src="/images/TTW-Header-Logo.png" alt="Table Top Warriors Logo 2" />
+				</a>
+			</div>
+			{{#if loggedIn}}
+			<a id="login-signup-btn" href="/dashboard">Dashboard</a>
+			<a id="login-signup-btn" href="/" id="logout">Logout</a>
+			{{else}}
+			<a href="/login" id="login-signup-btn">Log In / Sign Up</a>
+			{{/if}}
+		</div>
 		<main>
 			{{{ body }}}
 		</main>
 		<footer>
 			Thanks for visiting!
 		</footer>
-	</div>
 	{{#if loggedIn}}
-	{{!-- if user is logged in attatch front end js for logging out --}}
-	<script src="/javascript/logout.js"></script>
-	{{/if}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+	</div>
 </body>
 
 </html>
