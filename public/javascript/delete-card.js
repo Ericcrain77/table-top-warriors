@@ -1,16 +1,14 @@
 async function deleteCardHandler(event) {
     event.preventDefault();
 
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
+    const id = document.querySelector("#card-id").innerHTML.trim();
 
-    const response = await fetch(`api/cards/${id}`,{
+    const response = await fetch(`/api/cards/${id}`,{
         method: 'DELETE'
     });
 
     if (response.ok) {
-        document.location.replace('?????'); //CHECK THIS ROUTE
+        document.location.reload();
     } else {
         alert(response.statusText);
     }

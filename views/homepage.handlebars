@@ -1,10 +1,16 @@
-<section class="home-search">
-    <input type="text" placeholder="Search Card Name Here" id="search-box"/>
+<form class="home-search">
+    <input type="text" placeholder="Search Card Name Here" id="search-box" name="card-name" />
     <button type="submit" id="home-search-btn">Search</button>
-</section>
-
+</form>
+<div id='cardbox'>
+    <img src='' id="card-pic" />
+</div>
 <section class="home-game-logos">
     <image src="/images/Pokemon-Logo.png" alt="Pokemon Logo" id="home-pokemon" />
     <image src="/images/Magic-The-Gathering-Logo.png" alt="MTG Logo" id="home-mtg" />
     <image src="/images/Yu-Gi-Oh!-Logo.png" alt="Yu-Gi-Oh! Logo" id="home-yugioh" />
 </section>
+
+<script src="/javascript/poke.js"></script>
+<script src="/javascript/magic.js"></script>
+<script src="/javascript/yugi.js"></script>

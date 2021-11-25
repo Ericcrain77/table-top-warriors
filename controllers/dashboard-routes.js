@@ -38,7 +38,7 @@ router.get("/collection", withAuth, (req, res) => {
 //render deck creation page
 router.get("/create", withAuth, (req, res) => {
 
-    res.render("deck-creation2", {
+    res.render("deck-creation", {
         loggedIn: true
     });
 })
