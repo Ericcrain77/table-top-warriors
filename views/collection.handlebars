@@ -2,19 +2,21 @@
 
     {{#if decks.length}}
     <section class="collection">
+        {{#each decks as |deck|}}
         <div class="deck">
-            {{#each decks as |deck|}}
+            
             <div>
                 {{> deck-info deck}}
             </div>
             <div>
-                <button href="/dashboard/edit/{{deck.id}}" id="viewedit-btn">View/Edit</button>
+                <button onclick=location.href="/dashboard/edit/{{deck.id}}" id="viewedit-btn">View/Edit</button>
             </div>
 
             <div>
                 <button id="delete-deck-btn">Delete</button>
             </div>
-            {{/each}} 
+             
         </div>
+        {{/each}}
     </section>
     {{/if}}
