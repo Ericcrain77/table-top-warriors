@@ -1,5 +1,5 @@
-const createDeckBtn = document.querySelector('#create-a-deck');
-const viewDeckCollectionBtn = document.querySelector('#view-deck-collection');
+const createDeckBtn = document.querySelector('#create-btn');
+const viewDeckCollectionBtn = document.querySelector('#collection-btn');
 
 createDeckBtn.addEventListener('click', function() {
     document.location.replace('/dashboard/create');
@@ -8,4 +8,3 @@ createDeckBtn.addEventListener('click', function() {
 viewDeckCollectionBtn.addEventListener('click', function() {
     document.location.replace('/dashboard/collection');
 });
-

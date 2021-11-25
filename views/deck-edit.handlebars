@@ -1,13 +1,8 @@
 <div>
-    <button>Game:</button>
-    {{!-- Already Selected Game --}}
+    Deck Name: {{cards.0.deck.deck_name}}
+    
 </div>
-
-<div>
-    <label>Deck Name:</label>
-    <input />
-</div>
-
+============
 {{#each cards as |card|}}
     <div>
         {{>card-info card}}
@@ -25,11 +20,4 @@
     {{!-- Card Search Box --}}
 </div>
 
-<div>
-    <h2>Decklist:</h2>
-    <div>
-        {{!-- Decklist box --}}
-    </div>
-</div>
-
-<button>Edit Deck</button>
+<script src="/javascript/delete-card.js"></script>

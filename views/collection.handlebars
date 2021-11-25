@@ -1,39 +1,22 @@
-<!-- <h1>Deck Collection</h1>
-
-{{#if decks.length}}
-<section>
-    <h2>Your Decks</h2>
-    <div>
-        {{#each decks as |deck|}}
-        <div>
-            {{> deck-info deck}}
-        </div>
-        <div>
-            <a href="/dashboard/edit/{{deck.id}}">View/Edit</a>
-
-        </div>
-        {{/each}}
-    </div>
-</section>
-{{/if}} -->
-
 <h1 id="dc">Deck Collection</h1>
 
     {{#if decks.length}}
     <section class="collection">
+        {{#each decks as |deck|}}
         <div class="deck">
-            {{#each decks as |deck|}}
+            
             <div>
                 {{> deck-info deck}}
             </div>
             <div>
-                <button href="/dashboard/edit/{{deck.id}}" id="viewedit-btn">View/Edit</button>
+                <button onclick=location.href="/dashboard/edit/{{deck.id}}" id="viewedit-btn">View/Edit</button>
             </div>
 
             <div>
                 <button id="delete-deck-btn">Delete</button>
             </div>
-            {{/each}} 
+             
         </div>
+        {{/each}}
     </section>
     {{/if}}
