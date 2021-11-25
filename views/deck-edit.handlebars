@@ -1,29 +1,24 @@
-<div>
-    <button>Game:</button>
-    {{!-- Already Selected Game --}}
-</div>
-
-<div>
-    <label>Deck Name:</label>
-    <input />
-</div>
-
-<div>
-    <label>Card Search:</label>
-    <input name="card-name"/>
-    <button>Enter</button>
-    <h4>Type a word, phrase, or full card name and hit enter to search</h4>
-</div>
-
-<div>
-    {{!-- Card Search Box --}}
-</div>
-
-<div>
-    <h2>Decklist:</h2>
+<section class="edit-screen">
     <div>
-        {{!-- Decklist box --}}
+        <h2>Game:</h2>
+        <!-- handlebars tag for game logo deck is already built with -->
     </div>
-</div>
 
-<button>Edit Deck</button>
+    <div>
+        {{deck_name}}
+    </div>
+
+    <div>
+        <h4>Type a word, phrase, or full card name and hit enter to search</h4>
+        <label>Card Search:</label>
+        <input name="card-name"/>
+        <button>Enter</button>
+    </div>
+
+    <div>
+        <h2>Decklist:</h2>
+        <textarea name="decklist" class="decklist-box"></textarea>
+    </div>
+
+    <button>Edit Deck</button>
+</section>
