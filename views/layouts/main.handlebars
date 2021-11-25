@@ -9,20 +9,23 @@
 
 <body>
 	<div>
+		<header>
+			<h1>
+				<a href="/">Table Top Warriors</a>
+				<image src="/images/TTW-Header-Logo.png" alt="Table Top Warriors Logo 2" href="/">
+			</h1>
+			<nav>
+				{{#if loggedIn}}
+				{{!-- If user is logged in display logout button --}}
+				<a href="/dashboard">Dashboard</a>
+				<a href="/" id="logout">Logout</a>
+				{{else}}
+				{{!-- If user is not logged in display link to login page --}}
+				<a href="/login" id="login-signup-btn">Log In / Sign Up</a>
+				{{/if}}
+			</nav>
+		</header>
 
-		<div id="header">
-			<div id="header-logo">
-				<a href="/">
-					<image src="/images/TTW-Header-Logo.png" alt="Table Top Warriors Logo 2" />
-				</a>
-			</div>
-			{{#if loggedIn}}
-			<a href="/dashboard">Dashboard</a>
-			<a href="/" id="logout">Logout</a>
-			{{else}}
-			<a href="/login" id="login-signup-btn">Log In / Sign Up</a>
-			{{/if}}
-		</div>
 		<main>
 			{{{ body }}}
 		</main>

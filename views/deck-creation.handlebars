@@ -1,33 +1,15 @@
-<div>
-    <button>Game:</button>
-    <div>
-        <a href="#">YuGiOh!</a>
-        <a href="#">Pokemon</a>
-        <a href="#">Magic: The Gathering</a>
-    </div>
-</div>
+<form class="new-deck-form">
+    <label for="game-name">Choose a Game:</label>
+    <select name="game-name" id="game-name">
+        <option value="Pokemon">Pokemon</option>
+        <option value="YuGiOh">YuGiOh!</option>
+        <option value="Magic: The Gathering">Magic: The Gathering</option>
+    </select>
+    <br>
+    <label for="deck-name">Deck Name:</label>
+    <input type="text" id="deck-name" name="deck-name">
+    <br>
+    <button type="submit">Create Deck</button>
+</form>
 
-<div>
-    <label>Deck Name:</label>
-    <input />
-</div>
-
-<div>
-    <label>Card Search:</label>
-    <input />
-    <button>Enter</button>
-    <h4>Type a word, phrase, or full card name and hit enter to search</h4>
-</div>
-
-<div>
-    {{!-- Card Search Box --}}
-</div>
-
-<div>
-    <h2>Decklist:</h2>
-    <div>
-        {{!-- Decklist box --}}
-    </div>
-</div>
-
-<button>Submit Deck</button>
+<script src="/javascript/add-deck.js"></script>
