@@ -18,25 +18,24 @@
 				{{#if loggedIn}}
 				{{!-- If user is logged in display logout button --}}
 				<a href="/dashboard">Dashboard</a>
-				<button id="logout-btn">Log Out</button>
+				<a href="/" id="logout">Logout</a>
 				{{else}}
 				{{!-- If user is not logged in display link to login page --}}
-				<button id="login-signup-btn">Log In / Sign Up</button>
-				{{!-- <a href="/login">Login</a> --}}
+				<a href="/login" id="login-signup-btn">Log In / Sign Up</a>
 				{{/if}}
 			</nav>
 		</header>
+
 		<main>
 			{{{ body }}}
 		</main>
 		<footer>
 			Thanks for visiting!
 		</footer>
-	</div>
 	{{#if loggedIn}}
-	{{!-- if user is logged in attatch front end js for logging out --}}
-	<script src="/javascript/logout.js"></script>
-	{{/if}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+	</div>
 </body>
 
 </html>

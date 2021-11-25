@@ -4,9 +4,18 @@
         <!-- handlebars tag for game logo deck is already built with -->
     </div>
 
+{{#each cards as |card|}}
     <div>
-        {{deck_name}}
+        {{>card-info card}}
     </div>
+{{/each}}
+
+<div>
+    <label>Card Search:</label>
+    <input name="card-name"/>
+    <button>Enter</button>
+    <h4>Type a word, phrase, or full card name and hit enter to search</h4>
+</div>
 
     <div>
         <h4>Type a word, phrase, or full card name and hit enter to search</h4>
