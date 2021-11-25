@@ -8,138 +8,163 @@
 </head>
 
 <body>
-    <div id="header">
+	<div id="header">
         <div id="header-logo">
             <a href="/">
                 <image src="../images/TTW-Header-Logo.png" alt="Table Top Warriors Logo 2" />
             </a>
         </div>
+
+        <!-- <button id="login-signup-btn">Log In / Sign Up</button> -->
+        <!-- <button id="logout-btn">Log Out</button> -->
     </div>
-    
-    <div>
-        <buttonon>Game:</button>
+
+<!-- DECK EDIT -->
+    <section class="edit-screen">
         <div>
-            <a href="#">Yu-Gi-Oh</a>
-            <a href="#">Pokémon</a>
-            <a href="#">Magic: The Gathering</a>
+            <h2>Game:</h2>
+            <!-- handlebars tag for game logo deck is already built with -->
         </div>
-    </div>
-    
-    <div>
-        <label>Deck Name:</label>
-        <input />
-    </div>
-    
-    <div>
-        <label>Card Search:</label>
-        <input placeholder="Type a word, phrase, or full card name and hit enter to search"/>
-        <button>Enter</button>
-    </div>
-    
-    <div>
-        {{!-- Card Search Box --}}
-    </div>
-    
-    <div>
-        <h2>Decklist:</h2>
+
         <div>
-            {{!-- Decklist box --}}
+            {{deck_name}}
         </div>
-    </div>
-    
-    <button>Submit Deck</button>
 
-    <!-- <div id="header">
-        <div id="header-logo">
-            <a href="/">
-                <image src="../images/TTW-Header-Logo.png" alt="Table Top Warriors Logo 2" />
-            </a>
+        <div>
+            <h4>Type a word, phrase, or full card name and hit enter to search</h4>
+            <label>Card Search:</label>
+            <input name="card-name"/>
+            <button>Enter</button>
         </div>
-    </div>
 
-    <div class="user-btns">
-        <button id="create-btn">Create A Deck</button>
-        <button id="collection-btn">Deck Collection</button>
-    </div>
-
-    <section class="home-game-logos">
-        <image src="../images/Pokemon-Logo.png" alt="Pokemon Logo" id="home-pokemon" />
-        <image src="../images/Magic-The-Gathering-Logo.png" alt="MTG Logo" id="home-mtg" />
-        <image src="../images/Yu-Gi-Oh!-Logo.png" alt="Yu-Gi-Oh! Logo" id="home-yugioh" />
-    </section> -->
-    
-    <!-- <div id="header">
-        <div id="header-logo">
-            <a href="/">
-                <image src="../images/TTW-Header-Logo.png" alt="Table Top Warriors Logo 2" />
-            </a>
+        <div>
+            <h2>Decklist:</h2>
+            <textarea name="decklist" class="decklist-box"></textarea>
         </div>
-       
-            <button id="login-signup-btn">Log In / Sign Up</button>
+
+        <button>Edit Deck</button>
+    </section>
+
+
+<!-- DECK COLLECTION HANDLEBARS -->
+    <!-- <h1 id="dc">Deck Collection</h1>
+
+    {{#if decks.length}}
+    <section class="collection">
+        <div class="deck">
+            {{#each decks as |deck|}}
+            <div>
+                <image src="../images/Magic-The-Gathering-Logo.png" alt="Game Logo" id="deck-logo" />
+                {{game}}
+            </div>
+            <div id="deck-name">
+                <h4>{{deck_name}}</h4>
+            </div>
+                {{> deck-info deck}}
+            <div>
+                <button href="/dashboard/edit/{{deck.id}}" id="viewedit-btn">View/Edit</button>
+            </div>
+
+            <div>
+                <button id="delete-deck-btn">Delete</button>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/if}} -->
+
+<!-- DECK CREATION HANDLEBARS -->
+    <!-- <div>
+        <image src="../images/Table-Top-Warriors-Logo.png" alt="TTW Logo" id="main-logo" />
     </div>
-    
-    <section class="home-search">
+
+    <form class="new-deck-form">
+        <label for="game-name">Choose a Game:</label>
+        <select name="game-name" id="game-name">
+            <option></option>
+            <option value="Pokemon">Pokemon</option>
+            <option value="YuGiOh">Yu-Gi-Oh!</option>
+            <option value="Magic: The Gathering">Magic: The Gathering</option>
+        </select>
+        <br>
+        <label for="deck-name">Deck Name:</label>
+        <input type="text" id="deck-name" name="deck-name">
+        <br>
+        <button type="submit" id="create-deck-btn">Create Deck</button>
+    </form>
+
+    <script src="/javascript/add-deck.js"></script> -->
+
+<!-- HOMEPAGE.HANDLEBARS -->
+    <!-- <section class="home-search">
         <input type="text" placeholder="Search Card Name Here" id="search-box"/>
         <button type="submit" id="home-search-btn">Search</button>
     </section>
-
+    
     <section class="home-game-logos">
         <image src="../images/Pokemon-Logo.png" alt="Pokemon Logo" id="home-pokemon" />
         <image src="../images/Magic-The-Gathering-Logo.png" alt="MTG Logo" id="home-mtg" />
         <image src="../images/Yu-Gi-Oh!-Logo.png" alt="Yu-Gi-Oh! Logo" id="home-yugioh" />
     </section> -->
 
-	<!-- <div id="header">
-        <div id="header-logo">
-            <a href="/">
-                <image src="/images/TTW-Header-Logo.png" alt="Table Top Warriors Logo 2" />
-            </a>
-        </div>
+<!-- USER-HOME.HANDLEBARS -->
+    <!-- <div class="user-btns">
+        <button id="create-btn">Create A Deck</button>
+        <button id="collection-btn">Deck Collection</button>
     </div>
     
-    <div>
+    <section class="home-game-logos">
+        <image src="../images/Pokemon-Logo.png" alt="Pokemon Logo" id="home-pokemon" />
+        <image src="../images/Magic-The-Gathering-Logo.png" alt="MTG Logo" id="home-mtg" />
+        <image src="../images/Yu-Gi-Oh!-Logo.png" alt="Yu-Gi-Oh! Logo" id="home-yugioh" />
+    </section>
+    
+    <script src="/javascript/user-home.js"></script> -->
+    
+<!-- LOG IN / SIGN UP HANDLEBARS -->
+    <!-- <div>
         <image src="../images/Table-Top-Warriors-Logo.png" alt="TTW Logo" id="main-logo" />
     </div>
     
     <section class="forms">
         <form class="login-form">
             <div>
-                <label>Username:</label>
-                <input />
+                <label for="email-login">Email:</label>
+                <input type="text" id="email-login"/>
             </div>
-        
-            <div id="login-bottom">
-                <label>Password:</label>
-                <input />
+            <div>
+                <label for="password-login">Password:</label>
+                <input type="password" id="password-login"/>
             </div>
-        
-            <button class="login-btn">Log In</button>
+            <div>
+                <button type="submit" class="login-btn">Log In</button>
+            </div>
         </form>
-
+    
         <form class="signup-form">
             <div>
-                <label>Email:</label>
-                <input />
+                <label for="username-signup">Username:</label>
+                <input type="text" id="username-signup"/>
             </div>
-            
+    
             <div>
-                <label>Username:</label>
-                <input />
+                <label for="email-signup">Email:</label>
+                <input type="text" id="email-signup"/>
             </div>
-            
+    
             <div>
-                <label>Password:</label>
-                <input />
+                <label for="password-signup">Password:</label>
+                <input type="password" id="password-signup"/>
             </div>
-            
-            <div id="signup-bottom">
-                <label>Confirm Password:</label>
-                <input />
+    
+            <div>
+                <button type="submit" class="signup-btn">Sign Up</button>
             </div>
-            
-            <button class="signup-btn">Sign Up</button>
         </form>
-    </section>  -->
-</body>
+    </section>
+    
+    <script src="/javascript/login.js"></script> -->
+
+</body> 
 
 </html>
