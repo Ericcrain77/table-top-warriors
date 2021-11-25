@@ -2,7 +2,7 @@ async function cardSearchHandler(event) {
     event.preventDefault();
 
 const pokemon_name = document.querySelector('input[name="card-name"]').value.trim();
-const cardboxEl = document.querySelector('#cardbox');
+//const cardboxEl = document.querySelector('#cardbox');
     if (pokemon_name) {
     var pokeapi = "https://api.pokemontcg.io/v2/cards?q=!name:" + pokemon_name
           fetch(pokeapi, {
