@@ -1,8 +1,8 @@
 async function cardSearchHandler(event) {
     event.preventDefault();
 
-const pokemon_name = document.querySelector('textarea[name="card-name"]').value.trim();
-
+const pokemon_name = document.querySelector('input[name="card-name"]').value.trim();
+const cardboxEl = document.querySelector('#cardbox');
     if (pokemon_name) {
     var pokeapi = "https://api.pokemontcg.io/v2/cards?q=name:" + pokemon_name
           fetch(pokeapi, {
@@ -15,9 +15,12 @@ const pokemon_name = document.querySelector('textarea[name="card-name"]').value.
             if(response.ok) {
               response.json().then(function(data) {
               console.log(data);
-              console.log(data.data[0].name)
-              console.log(data.data[0].hp)
-              console.log(data.data[0].types[0])
+            //   console.log(data.data[0].name);
+            // var pokename = data.data[0].name;
+            // var cardnameEl = document.createElement('p');
+            // cardnameEl.textContent = pokename;
+            // cardboxEl.appendChild(cardnameEl); 
+            document.getElementById('card-pic').src = data.data[0].images.small
               })
             } else {
                 console.log('Your card is a fake.')
@@ -26,4 +29,4 @@ const pokemon_name = document.querySelector('textarea[name="card-name"]').value.
     };
 }
 
-document.querySelector('.card-name').addEventListener('submit', cardSearchHandler);
+document.querySelector('.home-search').addEventListener('submit', cardSearchHandler);
