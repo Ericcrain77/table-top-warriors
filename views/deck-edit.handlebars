@@ -1,24 +1,37 @@
-<div>
-    Deck Name: {{cards.0.deck.deck_name}}
-    
-</div>
-============
-{{#each cards as |card|}}
+<section class="edit-screen">
     <div>
-        {{>card-info card}}
+        Deck Name: {{cards.0.deck.deck_name}}
+        
     </div>
-{{/each}}
+ 
+    {{#each cards as |card|}}
+        <div>
+            {{>card-info card}}
+        </div>
+    {{/each}}
 
-<div>
-    <label>Card Search:</label>
-    <input name="card-name"/>
-    <button>Enter</button>
-    <h4>Type a word, phrase, or full card name and hit enter to search</h4>
-</div>
+    <div>
+        <label>Card Search:</label>
+        <input name="card-name"/>
+        <button>Enter</button>
+        <h4>Type a word, phrase, or full card name and hit enter to search</h4>
+    </div>
 
-<div>
-    {{!-- Card Search Box --}}
-</div>
+    <div>
+        <h4>Type a word, phrase, or full card name and hit enter to search</h4>
+        <label>Card Search:</label>
+        <input name="card-name"/>
+        <button>Enter</button>
+    </div>
+
+
+    <div>
+        <h2>Decklist:</h2>
+        <textarea name="decklist" class="decklist-box"></textarea>
+    </div>
+
+    <button>Edit Deck</button>
+</section>
 
 <script src="/javascript/add-card.js"></script>
 <script src="/javascript/delete-card.js"></script>
