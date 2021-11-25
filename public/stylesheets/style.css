@@ -496,3 +496,7 @@ body {
     background-color: var(--tertiary-color);
     color: var(--quinary-color);
 }
+
+.hide {
+    display: none;
+}
