@@ -1,23 +1,14 @@
-function displayCards() {
-  for (var i = 0; i < data.length; i += 1) {
-    document.getElementById('card_pic').src = data.data[i].images.small
-}
-
-
-
-
-
 async function cardSearchHandler(event) {
     event.preventDefault();
 
-const card_name = document.querySelector('input[name="card-name"]').value.trim();
-const game_name = document.querySelector('select[name="game-select"]').value;
+const cardname = document.querySelector('input[name="card-name"]').value.trim();
+const gamename = document.querySelector('select[name="game-select"]').value;
+const cardbox = document.querySelector('#cardbox');
 
-
-if (game_name === "pokemon") {
-  console.log(game_name);
-    if (card_name) {
-    var pokeapi = "https://api.pokemontcg.io/v2/cards?q=!name:" + card_name
+if (gamename === "pokemon") {
+  console.log(gamename);
+    if (cardname) {
+    var pokeapi = "https://api.pokemontcg.io/v2/cards?q=!name:" + cardname
           fetch(pokeapi, {
               "method": "GET",
               "headers": {
@@ -27,11 +18,11 @@ if (game_name === "pokemon") {
           .then(function(response) {
             if(response.ok) {
               response.json().then(function(data) {
-                for (var i = 0; i < data.length; i += 1) {
+                for (var i = 0; i < data.count; i++) {
                   var card_display = document.createElement('img');
                   card_display.setAttribute('class', 'displaycard');
-                  card_display.src = data.data[i].images.small;
-                  document.body.appendChild(card_display);
+                  card_display.setAttribute('src', data.data[i].images.small);
+                  cardbox.appendChild(card_display);
                 }
               })
             } else {
@@ -41,10 +32,10 @@ if (game_name === "pokemon") {
     };
 }
 
-else if (game_name === "yugi") {
-   console.log("yugi");
-   if (card_name) {
-    var yugiapi = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + card_name
+else if (gamename === "yugi") {
+
+   if (cardname) {
+    var yugiapi = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + cardname
   
     fetch(yugiapi, {
         "method": "GET"
@@ -52,7 +43,13 @@ else if (game_name === "yugi") {
       .then(function(response) {
           if(response.ok) {
         response.json().then(function(data) {
-        document.getElementById('card-pic').src = data.data[0].card_images[0].image_url
+          console.log(data);
+          for (var i = 0; i < data.data.length; i++) {
+          var card_display = document.createElement('img');
+          card_display.setAttribute('class', 'displaycard');
+          card_display.setAttribute('src', data.data[i].card_images[0].image_url);
+          cardbox.appendChild(card_display);
+        }
         })
     } else {
         console.log('Try to spell it correctly next time.')
@@ -61,9 +58,9 @@ else if (game_name === "yugi") {
   };
 
 }
-else if (game_name === "magic") {
-  if (card_name) {
-    var magicapi = "https://api.magicthegathering.io/v1/cards?name=" + card_name
+else if (gamename === "magic") {
+  if (cardname) {
+    var magicapi = "https://api.magicthegathering.io/v1/cards?name=" + cardname
   
     fetch(magicapi, {
         "method": "GET"
@@ -71,7 +68,14 @@ else if (game_name === "magic") {
       .then(function(response) {
           if(response.ok) {
         response.json().then(function(data) {
-          document.getElementById('card-pic').src = data.cards[0].imageUrl
+          console.log(data.cards.length);
+          for (var i = 0; i < data.cards.length; i++) {
+            console.log(i)
+            var card_display = document.createElement('img');
+            card_display.setAttribute('class', 'displaycard');
+            card_display.setAttribute('src', data.cards[i].imageUrl);
+            cardbox.appendChild(card_display);
+          }
         })
     } else {
         console.log('Try to spell it correctly next time.')
