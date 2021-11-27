@@ -240,6 +240,15 @@ body {
     width: 20%;
 }
 
+#cardbox {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .user-btns {
     display: flex;
     justify-content: space-evenly;
@@ -450,6 +459,7 @@ body {
     height: 28px;
     font-size: 18px;
     box-shadow: 3px 3px 3px;
+    padding: 0 4px 0 4px;
 }
 
 .edit-screen div button {
@@ -486,4 +496,8 @@ body {
 .edit-screen button:hover {
     background-color: var(--tertiary-color);
     color: var(--quinary-color);
+}
+
+.hide {
+    display: none;
 }

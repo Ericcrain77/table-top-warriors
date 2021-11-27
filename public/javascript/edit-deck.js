@@ -2,7 +2,6 @@ async function deckEditHandler(event) {
     event.preventDefault();
 
     const deck_name = document.querySelector('input[name="deck-name"]').value.trim();
-    const game = document.querySelector('input[name="game-name"]').value.trim();
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
@@ -10,8 +9,7 @@ async function deckEditHandler(event) {
     const response = await fetch(`/api/decks/${id}`, {
         method: 'PUT',
         body: JSON.stringify({
-            deck_name,
-            game
+            deck_name
         }),
         headers: {
             'Content-Type': 'application/json'
@@ -19,7 +17,7 @@ async function deckEditHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('?????'); //CHECK THIS ROUTE
+        document.location.reload(); 
     } else {
         alert(response.statusText)
     }

@@ -1,19 +1,17 @@
 async function deleteDeckHandler(event) {
     event.preventDefault();
 
-    const id = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
+    const id = document.querySelector("#deck-id").innerHTML.trim();
 
-    const response = await fetch(`api/decks/${id}`,{
+    const response = await fetch(`/api/decks/${id}`,{
         method: 'DELETE'
     });
 
     if (response.ok) {
-        document.location.replace('?????'); //CHECK THIS ROUTE
+        document.location.reload();
     } else {
         alert(response.statusText);
     }
 }
 
-document.querySelector('.delete-deck-btn').addEventListener('click', deleteDeckHandler);
+document.querySelector('#delete-deck-btn').addEventListener('click', deleteDeckHandler);

@@ -8,9 +8,16 @@
             <div>
                 {{> deck-info deck}}
             </div>
+
+            <div id="deck-id" class="hide">
+                {{deck.id}}
+            </div>
+            
             <div>
                 <button onclick=location.href="/dashboard/edit/{{deck.id}}" id="viewedit-btn">View/Edit</button>
             </div>
+
+            
 
             <div>
                 <button id="delete-deck-btn">Delete</button>
@@ -20,3 +27,6 @@
         {{/each}}
     </section>
     {{/if}}
+
+<script src="/javascript/deck-info.js"></script>
+<script src="/javascript/delete-deck.js"></script>
