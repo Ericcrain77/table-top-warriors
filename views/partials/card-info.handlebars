@@ -4,6 +4,12 @@
             Card Name: {{name}}
         </div>
         <div class="card-stats">
+                <div id="card-game" class="hide">
+                    {{game}}
+                </div>
+                <div id="deck-id" class="hide">
+                    {{deck_id}}
+                </div>
             {{#if magic}}
                 <div>
                     Type: {{magic.0.typeMagic}}
@@ -22,9 +28,6 @@
                 </div>
                 <div id="card-id" class="hide">
                     {{id}}
-                </div>
-                <div id="card-deck-id">
-                    {{deck_id}}
                 </div>
                 <div>
                     <button type="button" class="delete-card-btn">Delete Card</button>
@@ -55,9 +58,6 @@
                 </div>
                 <div id="card-id" class="hide">
                     {{id}}
-                </div>
-                <div id="card-deck-id">
-                    {{deck_id}}
                 </div>
                 <div>
                     <button type="button" class="delete-card-btn">Delete Card</button>
@@ -112,9 +112,6 @@
                 </div>
                 <div id="card-id" class="hide">
                     {{id}}
-                </div>
-                <div id="card-deck-id">
-                    {{deck_id}}
                 </div>
                 <div>
                     <button type="button" class="delete-card-btn">Delete Card</button>

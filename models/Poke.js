@@ -45,7 +45,7 @@ Poke.init(
             }
         },
         abilitiesPoke: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(1000),
             allowNull: true,
             get: function(){
                 return JSON.parse(this.getDataValue('abilitiesPoke'));
@@ -55,7 +55,7 @@ Poke.init(
             }
         },
         attacksPoke: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(1000),
             allowNull: true,
             get: function(){
                 return JSON.parse(this.getDataValue('attacksPoke'));
@@ -65,7 +65,7 @@ Poke.init(
             }
         },
         weaknessesPoke: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(1000),
             allowNull: true,
             get: function(){
                 return JSON.parse(this.getDataValue('weaknessesPoke'));

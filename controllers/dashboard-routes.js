@@ -52,7 +52,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
         include: [
             {
                 model: Deck,
-                attributes: ['deck_name', "game"]
+                attributes: ['id', 'deck_name', "game"]
             },
             {
                 model: Magic,

@@ -6,18 +6,31 @@
         </div>
     </form> 
 
-    <div>
-        <label>Card Search:</label>
-        <input name="card-name"/>
-        <button>Enter</button>
+    <form class="new-card-form">
+        <label for="card-name">Card Search:</label>
+        <input type="text" id="card-name" name="card-name" value="Enter card name here" />
         <h4>Type a word, phrase, or full card name and hit enter to search</h4>
+        <br>
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="card-game">
+        {{cards.0.deck.game}}
+    </div>
+    <div id="deck-id" >
+        {{cards.0.deck.id}}
     </div>
 
+    {{#if cards.length}}
+    <h4>Your cards</h4>
     {{#each cards as |card|}}
         <div>
             {{>card-info card}}
         </div>
     {{/each}}
+    {{else}}
+    <h4>You do not have any cards in this deck!</h4>
+    {{/if}}
 </section>
 
 <script src="/javascript/add-card.js"></script>
