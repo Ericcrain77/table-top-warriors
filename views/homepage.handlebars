@@ -1,8 +1,14 @@
 <form class="home-search">
     <input type="text" placeholder="Search Card Name Here" id="search-box" name="card-name" />
+    <select name="game-select" id='game-select' required>
+        <option value=""></option>
+        <option value="pokemon" >Pokemon</option>
+        <option value="yugi">YuGiOh!</option>
+        <option value="magic">Magic: The Gathering</option>
+    </select>
     <button type="submit" id="home-search-btn">Search</button>
 </form>
-<div id='cardbox'>
+<div id='cardbox' class='cardbox'>
     <img src='' id="card-pic" />
 </div>
 <section class="home-game-logos">
@@ -12,5 +18,5 @@
 </section>
 
 <script src="/javascript/poke.js"></script>
-<script src="/javascript/magic.js"></script>
-<script src="/javascript/yugi.js"></script>
+{{!-- <script src="/javascript/magic.js"></script>
+<script src="/javascript/yugi.js"></script> --}}

@@ -487,3 +487,13 @@ body {
     background-color: var(--tertiary-color);
     color: var(--quinary-color);
 }
+
+#game-select {
+    margin:12px;
+    font-size: 18px;
+    color: var(--quaternary-color);
+    padding: 5px;
+    width: 20%;
+    border-radius: 8px;
+    border: 0px;
+}
