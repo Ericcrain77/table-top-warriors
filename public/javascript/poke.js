@@ -68,7 +68,8 @@ else if (gamename === "magic") {
       .then(function(response) {
           if(response.ok) {
         response.json().then(function(data) {
-          console.log(data.cards.length);
+          console.log(data);
+
           for (var i = 0; i < data.cards.length; i++) {
             console.log(i)
             var card_display = document.createElement('img');

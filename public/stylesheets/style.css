@@ -497,3 +497,18 @@ body {
     border-radius: 8px;
     border: 0px;
 }
+
+#cardbox {
+    width:100%;
+    display: flex wrap;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.displaycards {
+    margin:4px;
+    padding: 4px;
+    border-radius: 8px;
+}
