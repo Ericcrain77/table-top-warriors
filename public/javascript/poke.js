@@ -77,10 +77,12 @@ else if (gamename === "magic") {
 
           for (var i = 0; i < data.cards.length; i++) {
             console.log(i)
+            if(data.cards[i].imageUrl) {
             var card_display = document.createElement('img');
             card_display.setAttribute('class', 'displaycard');
             card_display.setAttribute('src', data.cards[i].imageUrl);
             cardbox.appendChild(card_display);
+            }
           }
         })
     } else {
