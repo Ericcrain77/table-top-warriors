@@ -1,123 +1,117 @@
-<div>
-    <section>
-        <div class="card-name">
-            Card Name: {{name}}
-        </div>
-        <div class="card-stats">
-                <div id="card-game" class="hide">
-                    {{game}}
-                </div>
-                <div id="deck-id" class="hide">
-                    {{deck_id}}
-                </div>
+<div class="user-cards-container">
+    <div class="card-container">
+        <div class="user-card">
+            <h3 class="card-name magic_title">
+                Card Name: {{name}}
+            </h3>
+            <p id="card-game" class="hideThis">
+                {{game}}
+            </div>
+            <p id="deck-id" class="hideThis">
+                {{deck_id}}
+            </p>
             {{#if magic}}
-                <div>
-                    Type: {{magic.0.typeMagic}}
-                </div>
-                <div>
-                    Description: {{magic.0.textMagic}}
-                </div>
-                <div>
-                    Color(s): {{magic.0.colorsMagic}}, {{magic.0.colorIdentityMagic}}
-                </div>
-                <div>
-                    Mana Cost: {{magic.0.manaCostMagic}} 
-                </div>
-                <div>
-                    Converted Mana Cost: {{magic.0.cmcMagic}}
-                </div>
-                <div id="card-id" class="hide">
-                    {{id}}
-                </div>
-                <div>
-                    <button type="button" class="delete-card-btn">Delete Card</button>
-                </div>
-                ===================
+            <p class="magic_p">
+                Type: {{magic.0.typeMagic}}
+            </p>
+            <p class="magic_p">
+                Description: {{magic.0.textMagic}}
+            </p>
+            <p class="magic_p">
+                Color(s): {{magic.0.colorsMagic}}, {{magic.0.colorIdentityMagic}}
+            </p>
+            <p class="magic_p">
+                Mana Cost: {{magic.0.manaCostMagic}} 
+            </p>
+            <p class="magic_p">
+                Converted Mana Cost: {{magic.0.cmcMagic}}
+            </p>
+            <button type="button" class="delete-card-btn">Delete Card</button>
             {{/if}}
             {{#if yugis}}
-                <div>
-                    Attack: {{yugis.0.atkYugi}}
-                </div>
-                <div>
-                    Defense: {{yugis.0.defYugi}}
-                </div>
-                <div>
-                    Level: {{yugis.0.levelYugi}}
-                </div>
-                <div>
-                    Attribute: {{yugis.0.attributeYugi}}
-                </div>
-                <div>
-                    Race: {{yugis.0.raceYugi}}
-                </div>
-                <div>
-                    Type: {{yugis.0.typeYugi}}
-                </div>
-                <div>
-                    Description: {{yugis.0.descYugi}}
-                </div>
-                <div id="card-id" class="hide">
-                    {{id}}
-                </div>
-                <div>
-                    <button type="button" class="delete-card-btn">Delete Card</button>
-                </div>
-                ===================
+            <div>
+                Attack: {{yugis.0.atkYugi}}
+            </div>
+            <div>
+                Defense: {{yugis.0.defYugi}}
+            </div>
+            <div>
+                Level: {{yugis.0.levelYugi}}
+            </div>
+            <div>
+                Attribute: {{yugis.0.attributeYugi}}
+            </div>
+            <div>
+                Race: {{yugis.0.raceYugi}}
+            </div>
+            <div>
+                Type: {{yugis.0.typeYugi}}
+            </div>
+            <div>
+                Description: {{yugis.0.descYugi}}
+            </div>
+            <div id="card-id" class="hide">
+                {{id}}
+            </div>
+            <div>
+                <button type="button" class="delete-card-btn">Delete Card</button>
+            </div>
+            ===================
             {{/if}}
             {{#if pokes}}
-                <div>
-                    HP: {{pokes.0.hpPoke}} 
-                </div>
-                <div>
-                    Supertype: {{pokes.0.supertypePoke}} 
-                </div>
-                <div>
-                    Type(s): {{pokes.0.typesPoke}}
-                </div>
-                <div>
-                    Subtype(s): {{pokes.0.subtypesPoke}}
-                </div>
-                <div>
-                    Evolves to: {{pokes.0.evolvesToPoke}}
-                </div>
-                <div>
-                    Ability name(s): {{pokes.0.abilitiesPoke.0.name}}
-                </div>
-                <div>
-                    Ability text(s): {{pokes.0.abilitiesPoke.0.text}}
-                </div>
-                <div>
-                    Ability type(s): {{pokes.0.abilitiesPoke.0.type}}
-                </div>
-                <div>
-                    Attack name(s): {{pokes.0.attacksPoke.0.name}}
-                </div>
-                <div>
-                    Attack cost(s): {{pokes.0.attacksPoke.0.cost}}
-                </div>
-                <div>
-                    Attack converted energy cost(s): {{pokes.0.attacksPoke.0.convertedEnergyCost}}
-                </div>
-                <div>
-                    Attack damage(s): {{pokes.0.attacksPoke.0.damage}}
-                </div>
-                <div>
-                    Attack text(s): {{pokes.0.attacksPoke.0.text}}
-                </div>
-                <div>
-                    Weaknesses: {{pokes.0.weaknessesPoke.0.type}} {{pokes.0.weaknessesPoke.0.value}}
-                </div>
-                <div>
-                    Retreat cost: {{pokes.0.retreatCostPoke}}
-                </div>
-                <div id="card-id" class="hide">
-                    {{id}}
-                </div>
-                <div>
-                    <button type="button" class="delete-card-btn">Delete Card</button>
-                </div>
-                ===================
+            <div>
+                HP: {{pokes.0.hpPoke}} 
+            </div>
+            <div>
+                Supertype: {{pokes.0.supertypePoke}} 
+            </div>
+            <div>
+                Type(s): {{pokes.0.typesPoke}}
+            </div>
+            <div>
+                Subtype(s): {{pokes.0.subtypesPoke}}
+            </div>
+            <div>
+                Evolves to: {{pokes.0.evolvesToPoke}}
+            </div>
+            <div>
+                Ability name(s): {{pokes.0.abilitiesPoke.0.name}}
+            </div>
+            <div>
+                Ability text(s): {{pokes.0.abilitiesPoke.0.text}}
+            </div>
+            <div>
+                Ability type(s): {{pokes.0.abilitiesPoke.0.type}}
+            </div>
+            <div>
+                Attack name(s): {{pokes.0.attacksPoke.0.name}}
+            </div>
+            <div>
+                Attack cost(s): {{pokes.0.attacksPoke.0.cost}}
+            </div>
+            <div>
+                Attack converted energy cost(s): {{pokes.0.attacksPoke.0.convertedEnergyCost}}
+            </div>
+            <div>
+                Attack damage(s): {{pokes.0.attacksPoke.0.damage}}
+            </div>
+            <div>
+                Attack text(s): {{pokes.0.attacksPoke.0.text}}
+            </div>
+            <div>
+                Weaknesses: {{pokes.0.weaknessesPoke.0.type}} {{pokes.0.weaknessesPoke.0.value}}
+            </div>
+            <div>
+                Retreat cost: {{pokes.0.retreatCostPoke}}
+            </div>
+            <div id="card-id" class="hide">
+                {{id}}
+            </div>
+            <div>
+                <button type="button" class="delete-card-btn">Delete Card</button>
+            </div>
+            ===================
             {{/if}}
         </div>
-    </section>
+    </div>
 </div>

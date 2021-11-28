@@ -25,16 +25,16 @@
         
     </div>
 
+    <div>
     {{#if cards.length}}
-    <h4>Your cards</h4>
-    {{#each cards as |card|}}
-        <div>
+        <h2>Your cards</h2>
+        {{#each cards as |card|}}
             {{>card-info card}}
-        </div>
-    {{/each}}
+        {{/each}}
     {{else}}
-    <h4>You do not have any cards in this deck!</h4>
+        <h4>You do not have any cards in this deck!</h4>
     {{/if}}
+    </div>
 </section>
 
 <script src="/javascript/add-card.js"></script>

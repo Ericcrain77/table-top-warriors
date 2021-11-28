@@ -72,13 +72,11 @@ async function gameCardAPISearch(event) {
 function magicCardSearchRender(data) {
 
     magicData = data;
-    let searchedCardListUl = document.createElement("ul");
-    searchedCardListContainerEl.appendChild(searchedCardListUl);
+    console.log(magicData);
 
     let listLength = data.cards.length
     for (let i = 0; i < listLength; i++) {
         // Destructure data for input into elements
-        let cardData = magicData.cards[i];
         let name = magicData.cards[i].name;
         let manaCostMagic = magicData.cards[i].manaCost;
         let cmcMagic = magicData.cards[i].cmc;
@@ -86,61 +84,55 @@ function magicCardSearchRender(data) {
         let colorIdentityMagic = magicData.cards[i].colorIdentity;
         let typeMagic = magicData.cards[i].type;
         let textMagic = magicData.cards[i].text;
-        let magicImg = magicData.cards[i].imageUrl
+        // let cardItPlusOne = i + 1;
 
-        // Create li for the card info
-        let searchedCardListLi = document.createElement("li");
-        searchedCardListLi.classList.add(`searched_card_${i}`);
-        searchedCardListUl.appendChild(searchedCardListLi);
-
-        // Card image
-        // let magicCardImage = document.createElement("img");
-        // magicCardImage.src = data.cards[0].imageUrl;
-        // searchedCardListLi.appendChild(magicCardImage);
-
+        // Create container for card
+        let searchedCardContainerEl = document.createElement('div');
+        searchedCardContainerEl.classList.add('card_container');
+        searchedCardContainerEl.setAttribute('id', `card_container_${i}`);
+        searchedCardListContainerEl.appendChild(searchedCardContainerEl);
+        // Create div for the card info
+        let searchedCardListDiv = document.createElement("div");
+        searchedCardListDiv.classList.add('searched_card');
+        searchedCardListDiv.setAttribute('id', `searched_card_${i}`)
+        searchedCardContainerEl.appendChild(searchedCardListDiv);
         // Create title for the card info
         let magicNameEl = document.createElement("h3");
         magicNameEl.classList.add(`magic_title`);
         magicNameEl.setAttribute('id', `magic_title_${i}`)
-        magicNameEl.textContent = `Card Title: ` + name;
-        searchedCardListLi.appendChild(magicNameEl);
+        magicNameEl.textContent = `Card Name: ` + name;
+        searchedCardListDiv.appendChild(magicNameEl);
         // Create remaining card info elements
-        //// Mana Cost Magic
-        let magicManaCostMagicEl = document.createElement("p");
-        magicManaCostMagicEl.classList.add('magic_p');
-        magicManaCostMagicEl.setAttribute('id', `magic_mcm_${i}`)
-        magicManaCostMagicEl.textContent = `Mana Cost Magic: ` + manaCostMagic;
-        searchedCardListLi.appendChild(magicManaCostMagicEl);
-        //// CMC
-        let magicCMC = document.createElement("p");
-        magicCMC.classList.add('magic_p');
-        magicCMC.setAttribute('id', `magic_cmc_${i}`)
-        magicCMC.textContent = `Magic CMC: `, + cmcMagic;
-        searchedCardListLi.appendChild(magicCMC);
-        //// Colors Magic
-        let magicColorsMagicEl = document.createElement("p");
-        magicColorsMagicEl.classList.add('magic_p');
-        magicColorsMagicEl.setAttribute('id', `magic_cm_${i}`)
-        magicColorsMagicEl.textContent = `Colors Magic: ` + colorsMagic;
-        searchedCardListLi.appendChild(magicColorsMagicEl);
-        //// Color Identity Magic
-        let magicColorIdentityMagicEl = document.createElement("p");
-        magicColorIdentityMagicEl.classList.add('magic_p');
-        magicColorIdentityMagicEl.setAttribute('id', `magic_cim_${i}`)
-        magicColorIdentityMagicEl.textContent = `Color Identity Magic: ` + colorIdentityMagic;
-        searchedCardListLi.appendChild(magicColorIdentityMagicEl);
         //// Magic Type
         let magicTypeMagicEl = document.createElement("p");
         magicTypeMagicEl.classList.add('magic_p');
-        magicTypeMagicEl.setAttribute(`magic_type_${i}`);
+        magicTypeMagicEl.setAttribute('id', `magic_type_${i}`);
         magicTypeMagicEl.textContent = `Magic Type: ` + typeMagic;
-        searchedCardListLi.appendChild(magicTypeMagicEl);
+        searchedCardListDiv.appendChild(magicTypeMagicEl);
         //// Magic Text
         let magicTextMagicEl = document.createElement("p");
         magicTextMagicEl.classList.add('magic_p');
         magicTextMagicEl.setAttribute('id', `magic_text_${i}`)
         magicTextMagicEl.textContent = `Text: ` + textMagic;
-        searchedCardListLi.appendChild(magicTextMagicEl);
+        searchedCardListDiv.appendChild(magicTextMagicEl);
+        //// Colors Magic
+        let magicColorsMagicEl = document.createElement("p");
+        magicColorsMagicEl.classList.add('magic_p');
+        magicColorsMagicEl.setAttribute('id', `magic_cm_${i}`)
+        magicColorsMagicEl.textContent = `Colors: ${colorsMagic}, ${colorIdentityMagic}` ;
+        searchedCardListDiv.appendChild(magicColorsMagicEl);
+        //// Mana Cost Magic
+        let magicManaCostMagicEl = document.createElement("p");
+        magicManaCostMagicEl.classList.add('magic_p');
+        magicManaCostMagicEl.setAttribute('id', `magic_mcm_${i}`)
+        magicManaCostMagicEl.textContent = `Mana Cost: ` + manaCostMagic;
+        searchedCardListDiv.appendChild(magicManaCostMagicEl);
+        //// CMC
+        let magicCMC = document.createElement("p");
+        magicCMC.classList.add('magic_p');
+        magicCMC.setAttribute('id', `magic_cmc_${i}`)
+        magicCMC.textContent = `Converted Mana Cost: `, + cmcMagic;
+        searchedCardListDiv.appendChild(magicCMC);
 
         // Create button to add card to deck
         let magicAddButton = document.createElement("button");
@@ -148,7 +140,7 @@ function magicCardSearchRender(data) {
         magicAddButton.setAttribute('id', `magic_btn_${i}`)
         magicAddButton.textContent = `Add Card`;
         magicAddButton.type = "submit";
-        searchedCardListLi.appendChild(magicAddButton);
+        searchedCardContainerEl.appendChild(magicAddButton);
         
         document.querySelector(`#magic_btn_${i}`).addEventListener('click', magicCardCreationHandler);
     }
@@ -401,37 +393,37 @@ async function pokeCardSearchRender(data) {
         ////// Weakness Title
         let pokeWkTitleEl = document.createElement("h3");
         pokeWkTitleEl.classList.add('poke_t');
-        pokeWkTitleEl.setAttribute('id', `poke_wk_title_${i}`);
+        pokeWkTitleEl.setAttribute('id', `poke_wk_title_${i}`)
         pokeWkTitleEl.textContent = `Weaknesses`;
         pokeWeaknessLi.appendChild(pokeWkTitleEl);
         //////// Weakness Type
         let pokeWkTypeEl = document.createElement("p");
         pokeWkTypeEl.classList.add('poke_p');
-        pokeWkTypeEl.setAttribute('id', `poke_weak_type_${i}`);
+        pokeWkTypeEl.setAttribute('id', `poke_weak_type_${i}`)
         pokeWkTypeEl.textContent = `Weakness Type: ` + wkType;
         pokeWeaknessLi.appendChild(pokeWkTypeEl);
         //////// Weakness Value
         let pokeWkValEl = document.createElement("p");
         pokeWkValEl.classList.add('poke_p');
-        pokeWkValEl.setAttribute('id', `poke_weak_val_${i}`);
+        pokeWkValEl.setAttribute('id', `poke_weak_val_${i}`)
         pokeWkValEl.textContent = `Weakness Value: ` + wkValue;
         pokeWeaknessLi.appendChild(pokeWkValEl);
         //// Retreat Cost
         let pokeRetreatCostEl = document.createElement("p");
         pokeRetreatCostEl.classList.add('poke_p');
-        pokeRetreatCostEl.setAttribute('id', `poke_rt_cost_${i}`);
+        pokeRetreatCostEl.setAttribute('id', `poke_rt_cost_${i}`)
         pokeRetreatCostEl.textContent = `Retreat Cost: ` + retreatCostPoke;
         searchedCardListLi.appendChild(pokeNameEl);
 
         // Create button to add card to deck
         let pokeAddButton = document.createElement("button");
         pokeAddButton.classList.add('poke_btn');
-        pokeAddButton.setAttribute('id', `poke_btn_${i}`);
+        pokeAddButton.setAttribute('id', `poke_btn_${i}`)
         pokeAddButton.textContent = `Add Card`;
         pokeAddButton.type = "submit";
         searchedCardListLi.appendChild(pokeAddButton);
         
-        document.querySelector(`#poke_btn_${i}`).addEventListener('click', pokeCardCreationHandler)
+        document.querySelector(`.poke_btn_${i}`).addEventListener('click', pokeCardCreationHandler)
     }
 }
 
