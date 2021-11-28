@@ -1,7 +1,7 @@
 async function deleteCardHandler(event) {
     event.preventDefault();
 
-    const id = document.querySelector("#card-id").innerHTML.trim();
+    const id = event.target.id
 
     const response = await fetch(`/api/cards/${id}`,{
         method: 'DELETE'
@@ -14,4 +14,8 @@ async function deleteCardHandler(event) {
     }
 }
 
-document.querySelector('.delete-card-btn').addEventListener('click', deleteCardHandler);
+const buttons = document.getElementsByClassName("delete-card-btn");
+
+for (let i = 0; i < buttons.length; i++){
+    buttons[i].addEventListener("click", deleteCardHandler);
+}
