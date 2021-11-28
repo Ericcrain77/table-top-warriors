@@ -39,7 +39,7 @@ async function gameCardAPISearch(event) {
                 response.json()
                 .then(function(data) {
                     console.log(data);
-                    yugiCardSearchRender(event, game, deck_id, data)
+                    yugiCardSearchRender(data)
                 })
             } else {
                 console.log("SPELL AGAIN YUGI")
@@ -60,7 +60,7 @@ async function gameCardAPISearch(event) {
                 response.json()
                 .then(function(data) {
                     console.log(data);
-                    pokeCardSearchRender(event, game, deck_id, data)
+                    pokeCardSearchRender(data)
                 })
             } else {
                 console.log("SPELL AGAIN POKE")
@@ -150,6 +150,7 @@ function magicCardSearchRender(data) {
 async function yugiCardSearchRender(data) {
 
     yugiData = data;
+    console.log(yugiData);
     let searchedCardListUl = document.createElement("ul");
     searchedCardListContainerEl.appendChild(searchedCardListUl);
 
@@ -157,6 +158,7 @@ async function yugiCardSearchRender(data) {
     for (let i = 0; i < listLength; i++) {
         // Destructure data for input into elements
         let name = yugiData.data[i].name;
+        console.log(name);
         let levelYugi = yugiData.data[i].level;
         let attributeYugi = yugiData.data[i].attribute;
         let raceYugi = yugiData.data[i].race;
@@ -185,32 +187,32 @@ async function yugiCardSearchRender(data) {
         //// Attribute
         let yugiAttributeEl = document.createElement("p");
         yugiAttributeEl.classList.add(`yugi_attribute_${i}`);
-        yugiAttributeEl.textContent = `Attributes: `, + attributeYugi;
+        yugiAttributeEl.textContent = `Attributes: ` + attributeYugi;
         searchedCardListLi.appendChild(yugiAttributeEl);
         //// Race
         let yugiRaceEl = document.createElement("p");
         yugiRaceEl.classList.add(`yugi_race_${i}`);
-        yugiRaceEl.textContent = `Race: `, + raceYugi;
+        yugiRaceEl.textContent = `Race: ` + raceYugi;
         searchedCardListLi.appendChild(yugiRaceEl);
         //// Type
         let yugiTypeEl = document.createElement("p");
         yugiTypeEl.classList.add(`yugi_type_${i}`);
-        yugiTypeEl.textContent = `Type: `, + typeYugi;
+        yugiTypeEl.textContent = `Type: ` + typeYugi;
         searchedCardListLi.appendChild(yugiTypeEl);
         //// Description
         let yugiDescEl = document.createElement("p");
         yugiDescEl.classList.add(`yugi_desc_${i}`);
-        yugiDescEl.textContent = `Description: `, + descYugi;
+        yugiDescEl.textContent = `Description: ` + descYugi;
         searchedCardListLi.appendChild(yugiDescEl);
         //// Attack
         let yugiAtkEl = document.createElement("p");
         yugiAtkEl.classList.add(`yugi_atk_${i}`);
-        yugiAtkEl.textContent = `Attack: `, + atkYugi;
+        yugiAtkEl.textContent = `Attack: ` + atkYugi;
         searchedCardListLi.appendChild(yugiAtkEl);
         //// Defense
         let yugiDefEl = document.createElement("p");
         yugiDefEl.classList.add(`yugi_def_${i}`);
-        yugiDefEl.textContent = `Defense: `, + defYugi;
+        yugiDefEl.textContent = `Defense: ` + defYugi;
         searchedCardListLi.appendChild(yugiDefEl);
 
         // Create button to add card to deck
@@ -240,19 +242,20 @@ async function pokeCardSearchRender(data) {
         let hpPoke = pokeData.data[i].hp;
         let typesPoke = pokeData.data[i].types;
         let evolvesToPoke = pokeData.data[i].evolvesTo;
+        // Abilities
         let abilName = pokeData.data[i].abilities[0].name;
         let abilText = pokeData.data[i].abilities[0].text;
         let abilType = pokeData.data[i].abilities[0].type;
-        let abilitiesPoke;
+        // Attacks
         let atkName = pokeData.data[i].attacks[0].name;
         let atkCost = pokeData.data[i].attacks[0].cost;
         let atkConvertedEnergyCost = pokeData.data[i].attacks[0].convertedEnergyCost;
         let atkDamage = pokeData.data[i].attacks[0].damage;
         let atkText = pokeData.data[i].attacks[0].text;
-        let attacksPoke;
+        // Weaknesses
         let wkType = pokeData.data[i].weaknesses[0].type;
         let wkValue = pokeData.data[i].weaknesses[0].value;
-        let weaknessesPoke;
+
         let retreatCostPoke = pokeData.data[i].retreatCost;
 
         // Create li for the card info
@@ -261,7 +264,7 @@ async function pokeCardSearchRender(data) {
         searchedCardListUl.appendChild(searchedCardListLi);
         // Create title for the card info
         let pokeNameEl = document.createElement("h3");
-        pokeNameEl.classList.add(`magic_title_${i}`);
+        pokeNameEl.classList.add(`poke_title_${i}`);
         pokeNameEl.textContent = `Card Title: ` + name;
         searchedCardListLi.appendChild(pokeNameEl);
         // Create remaining card info elements
@@ -295,7 +298,7 @@ async function pokeCardSearchRender(data) {
         pokeAbilitiesUl.classList.add(`poke_abil_ul_${i}`);
         searchedCardListLi.appendChild(pokeAbilitiesUl);
         ////// Abilities Li
-        let pokeAbilitiesLi = docuement.createElement("li");
+        let pokeAbilitiesLi = document.createElement("li");
         pokeAbilitiesLi.classList.add(`poke_abil_li_${i}`);
         pokeAbilitiesUl.appendChild(pokeAbilitiesLi);
         //////// Abilities Title
