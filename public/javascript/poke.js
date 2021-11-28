@@ -5,6 +5,11 @@ const cardname = document.querySelector('input[name="card-name"]').value.trim();
 const gamename = document.querySelector('select[name="game-select"]').value;
 const cardbox = document.querySelector('#cardbox');
 
+var div = document.getElementById('cardbox');
+while(div.firstChild){
+    div.removeChild(div.firstChild);
+}
+
 if (gamename === "pokemon") {
   console.log(gamename);
     if (cardname) {
