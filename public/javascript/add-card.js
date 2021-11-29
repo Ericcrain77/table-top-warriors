@@ -166,17 +166,23 @@ async function yugiCardSearchRender(data) {
         let atkYugi = yugiData.data[i].atk;
         let defYugi = yugiData.data[i].def;
 
-        // Create li for the card info
-        let searchedCardListLi = document.createElement("li");
-        searchedCardListLi.classList.add(`searched_card_${i}`);
-        searchedCardListUl.appendChild(searchedCardListLi);
+        // Create container for card
+        let searchedCardContainerEl = document.createElement('div');
+        searchedCardContainerEl.classList.add('card_container');
+        searchedCardContainerEl.setAttribute('id', `card_container_${i}`);
+        searchedCardListContainerEl.appendChild(searchedCardContainerEl);
+        // Create div for the card info
+        let searchedCardListDiv = document.createElement("div");
+        searchedCardListDiv.classList.add('searched_card');
+        searchedCardListDiv.setAttribute('id', `searched_card_${i}`)
+        searchedCardContainerEl.appendChild(searchedCardListDiv);
 
         // Create title for the card info
         let yugiNameEl = document.createElement("h3");
         yugiNameEl.classList.add('yugi_title');
         yugiNameEl.setAttribute('id', `yugi_title_${i}`);
         yugiNameEl.textContent = `Card Title: ` + name;
-        searchedCardListLi.appendChild(yugiNameEl);
+        searchedCardListDiv.appendChild(yugiNameEl);
 
         // Create remaining card info elements
         //// Level
@@ -184,43 +190,43 @@ async function yugiCardSearchRender(data) {
         yugiLevelEl.classList.add('yugi_p');
         yugiLevelEl.setAttribute('id', `yugi_level_${i}`)
         yugiLevelEl.textContent = `Level: `, + levelYugi;
-        searchedCardListLi.appendChild(yugiLevelEl);
+        searchedCardListDiv.appendChild(yugiLevelEl);
         //// Attribute
         let yugiAttributeEl = document.createElement("p");
         yugiAttributeEl.classList.add('yugi_p');
         yugiAttributeEl.setAttribute('id', `yugi_attribute_${i}`);
         yugiAttributeEl.textContent = `Attributes: ` + attributeYugi;
-        searchedCardListLi.appendChild(yugiAttributeEl);
+        searchedCardListDiv.appendChild(yugiAttributeEl);
         //// Race
         let yugiRaceEl = document.createElement("p");
         yugiRaceEl.classList.add('yugi_p');
         yugiRaceEl.setAttribute('id', `yugi_race_${i}`)
         yugiRaceEl.textContent = `Race: ` + raceYugi;
-        searchedCardListLi.appendChild(yugiRaceEl);
+        searchedCardListDiv.appendChild(yugiRaceEl);
         //// Type
         let yugiTypeEl = document.createElement("p");
         yugiTypeEl.classList.add('yugi_p');
         yugiTypeEl.setAttribute('id', `yugi_type_${i}`)
         yugiTypeEl.textContent = `Type: ` + typeYugi;
-        searchedCardListLi.appendChild(yugiTypeEl);
+        searchedCardListDiv.appendChild(yugiTypeEl);
         //// Description
         let yugiDescEl = document.createElement("p");
         yugiDescEl.classList.add('yugi_p');
         yugiDescEl.setAttribute('id', `yugi_desc_${i}`)
         yugiDescEl.textContent = `Description: ` + descYugi;
-        searchedCardListLi.appendChild(yugiDescEl);
+        searchedCardListDiv.appendChild(yugiDescEl);
         //// Attack
         let yugiAtkEl = document.createElement("p");
         yugiAtkEl.classList.add('yugi_p');
         yugiAtkEl.setAttribute('id', `yugi_atk_${i}`)
         yugiAtkEl.textContent = `Attack: ` + atkYugi;
-        searchedCardListLi.appendChild(yugiAtkEl);
+        searchedCardListDiv.appendChild(yugiAtkEl);
         //// Defense
         let yugiDefEl = document.createElement("p");
         yugiDefEl.classList.add('yugi_p');
         yugiDefEl.setAttribute('id', `yugi_def_${i}`)
         yugiDefEl.textContent = `Defense: ` + defYugi;
-        searchedCardListLi.appendChild(yugiDefEl);
+        searchedCardListDiv.appendChild(yugiDefEl);
 
         // Create button to add card to deck
         let yugiAddButton = document.createElement("button");
@@ -228,9 +234,9 @@ async function yugiCardSearchRender(data) {
         yugiAddButton.setAttribute('id', `yugi_btn_${i}`)
         yugiAddButton.textContent = `Add Card`;
         yugiAddButton.type = "submit";
-        searchedCardListLi.appendChild(yugiAddButton);
+        searchedCardContainerEl.appendChild(yugiAddButton);
         
-        document.querySelector(`#yugi_btn_${i}`).addEventListener('click', yugiCardCreationHandler)
+        document.querySelector(`#yugi_btn_${i}`).addEventListener('click', yugiCardCreationHandler);
     }
 }
 

@@ -517,7 +517,7 @@ body {
 }
 
 .searched-cards-container,
-.user-cards-container {
+.user-cards_container {
     justify-content: center;
 }
 
