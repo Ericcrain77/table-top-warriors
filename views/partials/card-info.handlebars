@@ -25,10 +25,7 @@
                 <p class="magic_p">
                     Converted Mana Cost: {{magic.0.cmcMagic}}
                 </p>
-                <p id="card-id" class="hide magic_p">
-                    {{id}}
-                </p>
-                <button type="button" class="delete-card-btn">Delete Card</button>
+                <button type="button" class="delete-card-btn" id="{{id}}">Delete Card</button>
             {{/if}}
             {{#if yugis}}
                 <p class="yugi_p">
@@ -52,10 +49,7 @@
                 <p class="yugi_p">
                     Description: {{yugis.0.descYugi}}
                 </p>
-                <p id="card-id" class="hide yugi_p">
-                    {{id}}
-                </p>
-                <button type="button" class="delete-card-btn">Delete Card</button>
+                <button type="button" class="delete-card-btn" id="{{id}}">Delete Card</button>
                 ===================
             {{/if}}
             {{#if pokes}}
@@ -104,10 +98,7 @@
                 <p>
                     Retreat cost: {{pokes.0.retreatCostPoke}}
                 </p>
-                <p id="card-id" class="hide">
-                    {{id}}
-                </p>
-                <button type="button" class="delete-card-btn">Delete Card</button>
+                <button type="button" class="delete-card-btn" id="{{id}}">Delete Card</button>
             {{/if}}
         </div>
 </div>
