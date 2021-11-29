@@ -33,30 +33,30 @@
 //     })
 // };
 
-async function cardSearchHandler(event) {
-    event.preventDefault();
+// async function cardSearchHandler(event) {
+//     event.preventDefault();
 
-const cardname = document.querySelector('input[name="card-name"]').value.trim();
+// const cardname = document.querySelector('input[name="card-name"]').value.trim();
 
-    if (cardname) {
-        var yugiapi = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + cardname
+//     if (cardname) {
+//         var yugiapi = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + cardname
       
-        fetch(yugiapi, {
-            "method": "GET"
-        })
+//         fetch(yugiapi, {
+//             "method": "GET"
+//         })
 
-          .then(function(response) {
-              if(response.ok) {
-            response.json().then(function(data) {
-              console.log(data);
+//           .then(function(response) {
+//               if(response.ok) {
+//             response.json().then(function(data) {
+//               console.log(data);
 
-            document.getElementById('card-pic').src = data.data[0].card_images[0].image_url
-            })
-        } else {
-            console.log('Try to spell it correctly next time.')
-        }
-          }); 
-    };
-}
+//             document.getElementById('card-pic').src = data.data[0].card_images[0].image_url
+//             })
+//         } else {
+//             console.log('Try to spell it correctly next time.')
+//         }
+//           }); 
+//     };
+// }
 
-document.querySelector('.home-search').addEventListener('submit', cardSearchHandler);
+// document.querySelector('.home-search').addEventListener('submit', cardSearchHandler);

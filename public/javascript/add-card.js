@@ -166,17 +166,23 @@ async function yugiCardSearchRender(data) {
         let atkYugi = yugiData.data[i].atk;
         let defYugi = yugiData.data[i].def;
 
-        // Create li for the card info
-        let searchedCardListLi = document.createElement("li");
-        searchedCardListLi.classList.add(`searched_card_${i}`);
-        searchedCardListUl.appendChild(searchedCardListLi);
+        // Create container for card
+        let searchedCardContainerEl = document.createElement('div');
+        searchedCardContainerEl.classList.add('card_container');
+        searchedCardContainerEl.setAttribute('id', `card_container_${i}`);
+        searchedCardListContainerEl.appendChild(searchedCardContainerEl);
+        // Create div for the card info
+        let searchedCardListDiv = document.createElement("div");
+        searchedCardListDiv.classList.add('searched_card');
+        searchedCardListDiv.setAttribute('id', `searched_card_${i}`)
+        searchedCardContainerEl.appendChild(searchedCardListDiv);
 
         // Create title for the card info
         let yugiNameEl = document.createElement("h3");
         yugiNameEl.classList.add('yugi_title');
         yugiNameEl.setAttribute('id', `yugi_title_${i}`);
         yugiNameEl.textContent = `Card Title: ` + name;
-        searchedCardListLi.appendChild(yugiNameEl);
+        searchedCardListDiv.appendChild(yugiNameEl);
 
         // Create remaining card info elements
         //// Level
@@ -184,43 +190,43 @@ async function yugiCardSearchRender(data) {
         yugiLevelEl.classList.add('yugi_p');
         yugiLevelEl.setAttribute('id', `yugi_level_${i}`)
         yugiLevelEl.textContent = `Level: `, + levelYugi;
-        searchedCardListLi.appendChild(yugiLevelEl);
+        searchedCardListDiv.appendChild(yugiLevelEl);
         //// Attribute
         let yugiAttributeEl = document.createElement("p");
         yugiAttributeEl.classList.add('yugi_p');
         yugiAttributeEl.setAttribute('id', `yugi_attribute_${i}`);
         yugiAttributeEl.textContent = `Attributes: ` + attributeYugi;
-        searchedCardListLi.appendChild(yugiAttributeEl);
+        searchedCardListDiv.appendChild(yugiAttributeEl);
         //// Race
         let yugiRaceEl = document.createElement("p");
         yugiRaceEl.classList.add('yugi_p');
         yugiRaceEl.setAttribute('id', `yugi_race_${i}`)
         yugiRaceEl.textContent = `Race: ` + raceYugi;
-        searchedCardListLi.appendChild(yugiRaceEl);
+        searchedCardListDiv.appendChild(yugiRaceEl);
         //// Type
         let yugiTypeEl = document.createElement("p");
         yugiTypeEl.classList.add('yugi_p');
         yugiTypeEl.setAttribute('id', `yugi_type_${i}`)
         yugiTypeEl.textContent = `Type: ` + typeYugi;
-        searchedCardListLi.appendChild(yugiTypeEl);
+        searchedCardListDiv.appendChild(yugiTypeEl);
         //// Description
         let yugiDescEl = document.createElement("p");
         yugiDescEl.classList.add('yugi_p');
         yugiDescEl.setAttribute('id', `yugi_desc_${i}`)
         yugiDescEl.textContent = `Description: ` + descYugi;
-        searchedCardListLi.appendChild(yugiDescEl);
+        searchedCardListDiv.appendChild(yugiDescEl);
         //// Attack
         let yugiAtkEl = document.createElement("p");
         yugiAtkEl.classList.add('yugi_p');
         yugiAtkEl.setAttribute('id', `yugi_atk_${i}`)
         yugiAtkEl.textContent = `Attack: ` + atkYugi;
-        searchedCardListLi.appendChild(yugiAtkEl);
+        searchedCardListDiv.appendChild(yugiAtkEl);
         //// Defense
         let yugiDefEl = document.createElement("p");
         yugiDefEl.classList.add('yugi_p');
         yugiDefEl.setAttribute('id', `yugi_def_${i}`)
         yugiDefEl.textContent = `Defense: ` + defYugi;
-        searchedCardListLi.appendChild(yugiDefEl);
+        searchedCardListDiv.appendChild(yugiDefEl);
 
         // Create button to add card to deck
         let yugiAddButton = document.createElement("button");
@@ -228,9 +234,9 @@ async function yugiCardSearchRender(data) {
         yugiAddButton.setAttribute('id', `yugi_btn_${i}`)
         yugiAddButton.textContent = `Add Card`;
         yugiAddButton.type = "submit";
-        searchedCardListLi.appendChild(yugiAddButton);
+        searchedCardContainerEl.appendChild(yugiAddButton);
         
-        document.querySelector(`#yugi_btn_${i}`).addEventListener('click', yugiCardCreationHandler)
+        document.querySelector(`#yugi_btn_${i}`).addEventListener('click', yugiCardCreationHandler);
     }
 }
 
@@ -281,155 +287,123 @@ async function pokeCardSearchRender(data) {
 
         let retreatCostPoke = pokeData.data[i].retreatCost;
 
-        // Create li for the card info
-        let searchedCardListLi = document.createElement("li");
-        searchedCardListLi.classList.add(`searched_card_${i}`);
-        searchedCardListUl.appendChild(searchedCardListLi);
+        // Create container for card
+        let searchedCardContainerEl = document.createElement('div');
+        searchedCardContainerEl.classList.add('card_container');
+        searchedCardContainerEl.setAttribute('id', `card_container_${i}`);
+        searchedCardListContainerEl.appendChild(searchedCardContainerEl);
+        // Create div for the card info
+        let searchedCardListDiv = document.createElement("div");
+        searchedCardListDiv.classList.add('searched_card');
+        searchedCardListDiv.setAttribute('id', `searched_card_${i}`)
+        searchedCardContainerEl.appendChild(searchedCardListDiv);
         // Create title for the card info
         let pokeNameEl = document.createElement("h3");
         pokeNameEl.classList.add('poke_title');
         pokeNameEl.setAttribute('id', `yugi_btn_${i}`);
         pokeNameEl.textContent = `Card Title: ` + name;
-        searchedCardListLi.appendChild(pokeNameEl);
+        searchedCardListDiv.appendChild(pokeNameEl);
         // Create remaining card info elements
-        //// Super Types
-        let pokeSuperTypeEl = document.createElement("p");
-        pokeSuperTypeEl.classList.add('poke_p');
-        pokeSuperTypeEl.setAttribute('id', `poke_supt_${i}`)
-        pokeSuperTypeEl.textContent = `SuperType: ` + supertypePoke;
-        searchedCardListLi.appendChild(pokeSuperTypeEl);
-        //// Sub Types
-        let pokeSubtypesEl = document.createElement("p");
-        pokeSubtypesEl.classList.add('poke_p');
-        pokeSubtypesEl.setAttribute('id', `poke_subt_${i}`)
-        pokeSubtypesEl.textContent = `SubType: `, + subtypesPoke;
-        searchedCardListLi.appendChild(pokeSubtypesEl);
         //// HP
         let pokeHpEl = document.createElement("p");
         pokeHpEl.classList.add('poke_p');
         pokeHpEl.setAttribute('id', `poke_hp_${i}`)
         pokeHpEl.textContent = `HP: ` + hpPoke;
-        searchedCardListLi.appendChild(pokeHpEl);
+        searchedCardListDiv.appendChild(pokeHpEl);
+        //// Super Types
+        let pokeSuperTypeEl = document.createElement("p");
+        pokeSuperTypeEl.classList.add('poke_p');
+        pokeSuperTypeEl.setAttribute('id', `poke_supt_${i}`)
+        pokeSuperTypeEl.textContent = `SuperType: ` + supertypePoke;
+        searchedCardListDiv.appendChild(pokeSuperTypeEl);
         //// Types
         let pokeTypesEl = document.createElement("p");
         pokeTypesEl.classList.add('poke_p');
         pokeTypesEl.setAttribute('id', `poke_type_${i}`)
         pokeTypesEl.textContent = `Types: ` + typesPoke;
-        searchedCardListLi.appendChild(pokeTypesEl);
+        searchedCardListDiv.appendChild(pokeTypesEl);
+        //// Sub Types
+        let pokeSubtypesEl = document.createElement("p");
+        pokeSubtypesEl.classList.add('poke_p');
+        pokeSubtypesEl.setAttribute('id', `poke_subt_${i}`)
+        pokeSubtypesEl.textContent = `SubType: `, + subtypesPoke;
+        searchedCardListDiv.appendChild(pokeSubtypesEl);
+
+
         //// Evolves To
         let pokeEvolvesToEl = document.createElement("p");
         pokeEvolvesToEl.classList.add('poke_p');
         pokeEvolvesToEl.setAttribute('id', `poke_evolve_${i}`)
         pokeEvolvesToEl.textContent = `Evolves to: ` + evolvesToPoke;
-        searchedCardListLi.appendChild(pokeEvolvesToEl);
-        //// Abilities Ul
-        let pokeAbilitiesUl = document.createElement("ul");
-        pokeAbilitiesUl.setAttribute('id', `poke_abil_ul_${i}`);
-        searchedCardListLi.appendChild(pokeAbilitiesUl);
-        ////// Abilities Li
-        let pokeAbilitiesLi = document.createElement("li");
-        pokeAbilitiesLi.setAttribute('id', `poke_abil_li_${i}`);
-        pokeAbilitiesUl.appendChild(pokeAbilitiesLi);
-        //////// Abilities Title
-        let pokeAbilTitleEl = document.createElement("h3");
-        pokeAbilTitleEl.classList.add('poke_t');
-        pokeAbilTitleEl.setAttribute('id', `poke_abil_title_${i}`);
-        pokeAbilTitleEl.textContent = `Abilities`;
-        pokeAbilitiesLi.appendChild(pokeAbilTitleEl);
+        searchedCardListDiv.appendChild(pokeEvolvesToEl);
         //////// Ability Name
         let pokeAbilNameEl = document.createElement("p");
         pokeAbilNameEl.classList.add('poke_p');
         pokeAbilNameEl.setAttribute('id', `poke_abil_name_${i}`);
         pokeAbilNameEl.textContent = `Ability Name: ` + abilName;
-        pokeAbilitiesLi.appendChild(pokeAbilNameEl);
+        searchedCardListDiv.appendChild(pokeAbilNameEl);
         //////// Ability Text
         let pokeAbilTextEl = document.createElement("p");
         pokeAbilTextEl.classList.add('poke_p');
         pokeAbilTextEl.setAttribute('id', `poke_abil_text_${i}`);
         pokeAbilTextEl.textContent = `Ability Text: ` + abilText;
-        pokeAbilitiesLi.appendChild(pokeAbilTextEl);
+        searchedCardListDiv.appendChild(pokeAbilTextEl);
         //////// Ability Type
         let pokeAbilTypeEl = document.createElement("p");
         pokeAbilTypeEl.classList.add('poke_p');
         pokeAbilTypeEl.setAttribute('id', `poke_abil_type_${i}`);
         pokeAbilTypeEl.textContent = `Ability Type: ` + abilType;
-        pokeAbilitiesLi.appendChild(pokeAbilTypeEl);
-        //// Attacks Ul
-        let pokeAttacksUl = document.createElement("ul");
-        pokeAttacksUl.setAttribute('id', `poke_atk_ul_${i}`);
-        searchedCardListLi.appendChild(pokeAttacksUl);
-        ////// Attacks Li
-        let pokeAttacksLi = document.createElement("li");
-        pokeAttacksLi.setAttribute('id', `poke_atk_li_${i}`);
-        pokeAttacksUl.appendChild(pokeAttacksLi);
-        ////// Attacks Title
-        let pokeAtkTitleEl = document.createElement("h3");
-        pokeAtkTitleEl.classList.add('poke_t');
-        pokeAtkTitleEl.setAttribute('id', `poke_atk_title_${i}`);
-        pokeAtkTitleEl.textContent = `Attacks`;
-        pokeAttacksLi.appendChild(pokeAtkTitleEl);
+        searchedCardListDiv.appendChild(pokeAbilTypeEl);
+
         //////// Attack Name
         let pokeAtkNameEl = document.createElement("p");
         pokeAtkNameEl.classList.add('poke_p');
         pokeAtkNameEl.setAttribute('id', `poke_atk_name_${i}`);
         pokeAtkNameEl.textContent = `Attack Name: ` + atkName;
-        pokeAttacksLi.appendChild(pokeAtkNameEl);
+        searchedCardListDiv.appendChild(pokeAtkNameEl);
         //////// Attack Cost
         let pokeAtkCostEl = document.createElement("p");
         pokeAtkCostEl.classList.add('poke_p');
         pokeAtkCostEl.setAttribute('id', `poke_atk_cost_${i}`);
         pokeAtkCostEl.textContent = `Attack Cost: ` + atkCost;
-        pokeAttacksLi.appendChild(pokeAtkCostEl);
+        searchedCardListDiv.appendChild(pokeAtkCostEl);
         //////// Attack CEC
         let pokeAtkCECEl = document.createElement("p");
         pokeAtkCECEl.classList.add('poke_p');
         pokeAtkCECEl.setAttribute('id', `poke_atk_cec_${i}`);
         pokeAtkCECEl.textContent = `Attack CEC: ` + atkConvertedEnergyCost
-        pokeAttacksLi.appendChild(pokeAtkCECEl);
+        searchedCardListDiv.appendChild(pokeAtkCECEl);
         //////// Attack Damage
         let pokeAtkDamageEl = document.createElement("p");
         pokeAtkDamageEl.classList.add('poke_p');
         pokeAtkDamageEl.setAttribute('id', `poke_atk_dam_${i}`);
         pokeAtkDamageEl.textContent = `Attack Damage: ` + atkDamage;
-        pokeAttacksLi.appendChild(pokeAtkDamageEl);
+        searchedCardListDiv.appendChild(pokeAtkDamageEl);
         //////// Attack Text
         let pokeAtkTextEl = document.createElement("p");
         pokeAtkTextEl.classList.add('poke_p');
         pokeAtkTextEl.setAttribute('id', `poke_atk_txt_${i}`)
         pokeAtkTextEl.textContent = `Attack Text: ` + atkText;
-        pokeAttacksLi.appendChild(pokeAtkTextEl);
-        //// Weakness Ul
-        let pokeWeaknessUl = document.createElement("ul");
-        pokeWeaknessUl.setAttribute('id', `poke_weak_ul_${i}`);
-        searchedCardListLi.appendChild(pokeWeaknessUl);
-        ////// Weakness Li
-        let pokeWeaknessLi = document.createElement("li");
-        pokeWeaknessLi.setAttribute('id', `poke_weak_li_${i}`);
-        pokeWeaknessUl.appendChild(pokeWeaknessLi);
-        ////// Weakness Title
-        let pokeWkTitleEl = document.createElement("h3");
-        pokeWkTitleEl.classList.add('poke_t');
-        pokeWkTitleEl.setAttribute('id', `poke_wk_title_${i}`)
-        pokeWkTitleEl.textContent = `Weaknesses`;
-        pokeWeaknessLi.appendChild(pokeWkTitleEl);
+        searchedCardListDiv.appendChild(pokeAtkTextEl);
+
         //////// Weakness Type
         let pokeWkTypeEl = document.createElement("p");
         pokeWkTypeEl.classList.add('poke_p');
         pokeWkTypeEl.setAttribute('id', `poke_weak_type_${i}`)
         pokeWkTypeEl.textContent = `Weakness Type: ` + wkType;
-        pokeWeaknessLi.appendChild(pokeWkTypeEl);
+        searchedCardListDiv.appendChild(pokeWkTypeEl);
         //////// Weakness Value
         let pokeWkValEl = document.createElement("p");
         pokeWkValEl.classList.add('poke_p');
         pokeWkValEl.setAttribute('id', `poke_weak_val_${i}`)
         pokeWkValEl.textContent = `Weakness Value: ` + wkValue;
-        pokeWeaknessLi.appendChild(pokeWkValEl);
+        searchedCardListDiv.appendChild(pokeWkValEl);
         //// Retreat Cost
         let pokeRetreatCostEl = document.createElement("p");
         pokeRetreatCostEl.classList.add('poke_p');
         pokeRetreatCostEl.setAttribute('id', `poke_rt_cost_${i}`)
         pokeRetreatCostEl.textContent = `Retreat Cost: ` + retreatCostPoke;
-        searchedCardListLi.appendChild(pokeNameEl);
+        searchedCardListDiv.appendChild(pokeNameEl);
 
         // Create button to add card to deck
         let pokeAddButton = document.createElement("button");
@@ -437,7 +411,7 @@ async function pokeCardSearchRender(data) {
         pokeAddButton.setAttribute('id', `poke_btn_${i}`);
         pokeAddButton.textContent = `Add Card`;
         pokeAddButton.type = "submit";
-        searchedCardListLi.appendChild(pokeAddButton);
+        searchedCardContainerEl.appendChild(pokeAddButton);
         
         document.querySelector(`#poke_btn_${i}`).addEventListener('click', pokeCardCreationHandler)
     }

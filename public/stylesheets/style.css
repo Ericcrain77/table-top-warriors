@@ -176,7 +176,7 @@ body {
     opacity: 1;
 }
 
-.home-search {
+#home-search {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -238,15 +238,6 @@ body {
 #home-yugioh {
     height: 20%;
     width: 20%;
-}
-
-#cardbox {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .user-btns {
@@ -517,15 +508,16 @@ body {
 }
 
 .searched-cards-container,
-.user-cards-container {
+.user-cards_container {
     justify-content: center;
 }
 
 .card_container {
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     max-width: 500px;
-    max-height: 500px;
+    height: fit-content;
     margin: 0;
 }
 .searched_card,
@@ -535,7 +527,7 @@ body {
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
     float: left;
-    height: 400px;
+    height: fit-content;
 }
 
 .magic_title,
@@ -564,3 +556,29 @@ body {
 .hide {
     display: none;
 }
+#game-select {
+    margin:12px;
+    font-size: 18px;
+    color: var(--quaternary-color);
+    padding: 5px;
+    width: 20%;
+    border-radius: 8px;
+    border: 0px;
+}
+
+#cardbox {
+    width:100%;
+    display: flex wrap;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.displaycards {
+    margin:4px;
+    padding: 4px;
+    border-radius: 8px;
+    background-color: #3C2FFE;
+}
+
