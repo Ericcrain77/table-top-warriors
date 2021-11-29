@@ -6,7 +6,7 @@ let pokeData;
 async function gameCardAPISearch(event) {
     event.preventDefault();
 
-    let game = document.querySelector('#card-game').innerText;
+    let game = document.querySelector('#card-game').innerText.trim();
     let charName = document.querySelector('input[name="card-name"]').value.trim();
     
     if (charName !== null && game === "Magic: The Gathering") {
@@ -250,9 +250,25 @@ async function pokeCardSearchRender(data) {
         let typesPoke = pokeData.data[i].types;
         let evolvesToPoke = pokeData.data[i].evolvesTo;
         // Abilities
-        let abilName = pokeData.data[i].abilities[0].name;
-        let abilText = pokeData.data[i].abilities[0].text;
-        let abilType = pokeData.data[i].abilities[0].type;
+        let abilName;
+        let abilText;
+        let abilType;
+        if (pokeData.data[i].abilities === undefined) {
+            abilName = "";
+        } else {
+            abilName = pokeData.data[i].abilities[0].name
+        }
+        if (pokeData.data[i].abilities === undefined) {
+            abilText = "";
+        } else {
+            abilText = pokeData.data[i].abilities[0].text
+        }
+        if (pokeData.data[i].abilities === undefined) {
+            abilType = "";
+        } else {
+            abilType = pokeData.data[i].abilities[0].type
+        }
+
         // Attacks
         let atkName = pokeData.data[i].attacks[0].name;
         let atkCost = pokeData.data[i].attacks[0].cost;
@@ -373,7 +389,7 @@ async function pokeCardSearchRender(data) {
         //////// Attack Damage
         let pokeAtkDamageEl = document.createElement("p");
         pokeAtkDamageEl.classList.add('poke_p');
-        pokeAtkDamageEl.searchedCardListLi('id', `poke_atk_dam_${i}`)
+        pokeAtkDamageEl.setAttribute('id', `poke_atk_dam_${i}`);
         pokeAtkDamageEl.textContent = `Attack Damage: ` + atkDamage;
         pokeAttacksLi.appendChild(pokeAtkDamageEl);
         //////// Attack Text
@@ -418,12 +434,12 @@ async function pokeCardSearchRender(data) {
         // Create button to add card to deck
         let pokeAddButton = document.createElement("button");
         pokeAddButton.classList.add('poke_btn');
-        pokeAddButton.setAttribute('id', `poke_btn_${i}`)
+        pokeAddButton.setAttribute('id', `poke_btn_${i}`);
         pokeAddButton.textContent = `Add Card`;
         pokeAddButton.type = "submit";
         searchedCardListLi.appendChild(pokeAddButton);
         
-        document.querySelector(`.poke_btn_${i}`).addEventListener('click', pokeCardCreationHandler)
+        document.querySelector(`#poke_btn_${i}`).addEventListener('click', pokeCardCreationHandler)
     }
 }
 
@@ -517,7 +533,7 @@ async function pokeCardCreationHandler(event) {
     let deck_id = document.querySelector('#deck-id').innerText;
     let game = document.querySelector('#card-game').innerText;
 
-    let dataI = event.target.className.split('_')[2];
+    let dataI = event.target.id.split('_')[2];
 
     let name = pokeData.data[dataI].name;
     let supertypePoke = pokeData.data[dataI].supertype;

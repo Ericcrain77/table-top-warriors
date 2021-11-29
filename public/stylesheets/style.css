@@ -516,10 +516,6 @@ body {
     color: var(--quinary-color);
 }
 
-.hideThis {
-    display: none;
-}
-
 .searched-cards-container,
 .user-cards-container {
     justify-content: center;
@@ -539,7 +535,6 @@ body {
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
     padding: 10px;
     float: left;
-    overflow-y: scroll;
     height: 400px;
 }
 
@@ -550,6 +545,7 @@ body {
 
 }
 
+.game_p,
 .magic_p,
 .yugi_p,
 .poke_p {
@@ -558,9 +554,13 @@ body {
     width: 100%;
 }
 
-.magic_btn,
+/* .magic_btn,
 .yugi_btn,
 .poke_p {
 
     
+} */
+
+.hide {
+    display: none;
 }

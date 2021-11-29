@@ -14,23 +14,29 @@
         <button type="submit">Search</button>
     </form>
 
-    <div id="card-game">
+    <section id="card-game" class="hide">
         {{cards.0.deck.game}}
-    </div>
-    <div id="deck-id" >
+    </section>
+    <section id="deck-id" class="hide">
         {{cards.0.deck.id}}
-    </div>
+    </section>
 
     <div class="searched-cards-container">
         
     </div>
 
-    <div>
+    <div class="user-cards-container">
     {{#if cards.length}}
         <h2>Your cards</h2>
-        {{#each cards as |card|}}
-            {{>card-info card}}
-        {{/each}}
+        <div class="card-container">
+            <div class="user-card">
+            {{#each cards as |card|}}
+
+                {{>card-info card}}
+
+            {{/each}}
+            </div>
+        </div>
     {{else}}
         <h4>You do not have any cards in this deck!</h4>
     {{/if}}
