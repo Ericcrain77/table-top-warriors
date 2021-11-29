@@ -6,9 +6,9 @@ let pokeData;
 async function gameCardAPISearch(event) {
     event.preventDefault();
 
-    let game = document.querySelector('#card-game').innerText.trim();
+    let game = document.querySelector('section[id="card-game"]').innerHTML.trim();
     let charName = document.querySelector('input[name="card-name"]').value.trim();
-    
+    console.log(game, charName);
     if (charName !== null && game === "Magic: The Gathering") {
         console.log("MAGIC API INIT")
         var magicapi = "https://api.magicthegathering.io/v1/cards?name=" + charName;
@@ -27,7 +27,7 @@ async function gameCardAPISearch(event) {
                 console.log("SPELL AGAIN MAGIC")
             }
         })
-    } else if (charName !== null && game === "YuGiOh!") {
+    } else if (charName !== null && game === "YuGiOh") {
         console.log("YUGI API INIT")
         var yugiapi = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + charName;
 
@@ -462,7 +462,7 @@ async function yugiCardCreationHandler(event) {
     event.preventDefault();
 
     let deck_id = document.querySelector('#deck-id').innerText.trim();
-    let game = document.querySelector('#card-game').innerText.trim();
+    let game = document.querySelector('section[id="card-game"]').innerHTML.trim();
 
     let dataI = event.target.id.split('_')[2];
 

@@ -152,7 +152,7 @@ router.post('/', withAuth, (req, res) => {
             })
             .then(dbCardData => res.json(dbCardData))
         }
-        else if(dbCardData.game === "YuGiOh!"){
+        else if(dbCardData.game === "YuGiOh"){
             Yugi.create({
                 levelYugi: req.body.levelYugi,
                 attributeYugi: req.body.attributeYugi,
