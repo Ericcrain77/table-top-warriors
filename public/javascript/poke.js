@@ -97,15 +97,7 @@ else {
 }
 document.querySelector('#home-search').addEventListener('submit', cardSearchHandler);
 
-const webcamElement = document.getElementById('webcam');
-const canvasElement = document.getElementById('canvas');;
-const webcam = new Webcam(webcamElement, 'user', canvasElement);
-webcam.start()
-function camera() {
-  webcam.snap();
-  let picture = webcam.snap();
-  document.querySelector('#download-photo').src = picture;
-}
+
 
     
 
