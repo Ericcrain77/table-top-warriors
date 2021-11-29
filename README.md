@@ -30,7 +30,7 @@ Deck Edit Page
 ![Deck Edit Page](public/images/Deck-Edit-Page.png)
 
 Deck Collection Page
-![Deck Collection Page](public/images/Deck-Collection-page.png)
+![Deck Collection Page](public/images/Deck-Collection-Page.png)
 
 ## Technologies
 This application utilizes the following npm packages:
