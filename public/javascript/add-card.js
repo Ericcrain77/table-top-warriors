@@ -446,8 +446,8 @@ async function pokeCardSearchRender(data) {
 async function magicCardCreationHandler(event) {
     event.preventDefault();
 
-    let deck_id = document.querySelector('#deck-id').innerText;
-    let game = document.querySelector('#card-game').innerText;
+    let deck_id = document.querySelector('#deck-id').innerText.trim();
+    let game = document.querySelector('#card-game').innerText.trim();
 
     let dataI = event.target.id.split('_')[2];
 
@@ -487,8 +487,8 @@ async function magicCardCreationHandler(event) {
 async function yugiCardCreationHandler(event) {
     event.preventDefault();
 
-    let deck_id = document.querySelector('#deck-id').innerText;
-    let game = document.querySelector('#card-game').innerText;
+    let deck_id = document.querySelector('#deck-id').innerText.trim();
+    let game = document.querySelector('#card-game').innerText.trim();
 
     let dataI = event.target.className.split('_')[2];
 
@@ -530,8 +530,8 @@ async function yugiCardCreationHandler(event) {
 async function pokeCardCreationHandler(event) {
     event.preventDefault();
 
-    let deck_id = document.querySelector('#deck-id').innerText;
-    let game = document.querySelector('#card-game').innerText;
+    let deck_id = document.querySelector('#deck-id').innerText.trim();
+    let game = document.querySelector('#card-game').innerText.trim();
 
     let dataI = event.target.id.split('_')[2];
 
