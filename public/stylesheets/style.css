@@ -289,9 +289,10 @@ body {
     background-color: var(--quinary-color);
     border: 4px solid var(--tertiary-color);
     border-radius: 8px;
+    box-shadow: 7px 7px 12px;
     width: 30%;
     padding: 20px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .new-deck-form label {

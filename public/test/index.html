@@ -91,9 +91,8 @@
     <form class="new-deck-form">
         <label for="game-name">Choose a Game:</label>
         <select name="game-name" id="game-name">
-            <option></option>
             <option value="Pokemon">Pokemon</option>
-            <option value="YuGiOh">Yu-Gi-Oh!</option>
+            <option value="YuGiOh">YuGiOh!</option>
             <option value="Magic: The Gathering">Magic: The Gathering</option>
         </select>
         <br>
@@ -102,20 +101,31 @@
         <br>
         <button type="submit" id="create-deck-btn">Create Deck</button>
     </form>
-
+    
     <script src="/javascript/add-deck.js"></script> -->
 
 <!-- HOMEPAGE.HANDLEBARS -->
-    <!-- <section class="home-search">
-        <input type="text" placeholder="Search Card Name Here" id="search-box"/>
+    <!-- <form id="home-search">
+        <input type="text" placeholder="Search Card Name Here" id="search-box" name="card-name" />
+        <select name="game-select" id='game-select' required>
+            <option value="">Select a Game</option>
+            <option value="pokemon" >Pokemon</option>
+            <option value="yugi">YuGiOh!</option>
+            <option value="magic">Magic: The Gathering</option>
+        </select>
         <button type="submit" id="home-search-btn">Search</button>
-    </section>
-    
+    </form>
+
+    <div id='cardbox'>
+    </div>
     <section class="home-game-logos">
         <image src="../images/Pokemon-Logo.png" alt="Pokemon Logo" id="home-pokemon" />
         <image src="../images/Magic-The-Gathering-Logo.png" alt="MTG Logo" id="home-mtg" />
         <image src="../images/Yu-Gi-Oh!-Logo.png" alt="Yu-Gi-Oh! Logo" id="home-yugioh" />
-    </section> -->
+    </section>
+
+    <script src="/javascript/poke.js"></script> -->
+
 
 <!-- USER-HOME.HANDLEBARS -->
     <!-- <div class="user-btns">
@@ -133,7 +143,7 @@
     
 <!-- LOG IN / SIGN UP HANDLEBARS -->
     <!-- <div>
-        <image src="/images/Table-Top-Warriors-Logo.png" alt="TTW Logo" id="main-logo" />
+        <image src="../images/Table-Top-Warriors-Logo.png" alt="TTW Logo" id="main-logo" />
     </div>
 
     <div class="forms">
