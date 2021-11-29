@@ -27,10 +27,10 @@ Deck Creation Page
 ![Deck Creation Page](public/images/Deck-Creation-Page.png)
 
 Deck Edit Page
-![Deck Edit Page](public/images/)
+![Deck Edit Page](public/images/Deck-Edit-Page.png)
 
 Deck Collection Page
-![Deck Collection Page](public/images/)
+![Deck Collection Page](public/images/Deck-Collection-page.png)
 
 ## Technologies
 This application utilizes the following npm packages:
@@ -43,7 +43,7 @@ This application utilizes the following npm packages:
 * mysql2 
 * sequelize
 
-It is written with html and javascript, stylized with css, and utilizes MySQL to save user email addresses and passwords as well as created decks with saved card information.
+This application is written with Handlebars.js and JavaScript, stylized with CSS, and utilizes MySQL to save user email addresses and passwords as well as created decks with saved card information.
 
 This application calls the Magic: The Gathering API, Pokemon TCG API, and Yu-Gi-Oh! API to fetch the card information to display on screen.
 
