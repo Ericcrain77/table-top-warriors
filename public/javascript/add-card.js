@@ -255,13 +255,6 @@ async function pokeCardSearchRender(data) {
         let hpPoke = pokeData.data[i].hp;
         let typesPoke = pokeData.data[i].types;
         let evolvesToPoke = pokeData.data[i].evolvesTo;
-<<<<<<< HEAD
-        Abilities
-        let abilName = pokeData.data[i].abilities[0].name;
-        let abilText = pokeData.data[i].abilities[0].text;
-        let abilType = pokeData.data[i].abilities[0].type;
-        Attacks
-=======
         // Abilities
         let abilName;
         let abilText;
@@ -283,7 +276,6 @@ async function pokeCardSearchRender(data) {
         }
 
         // Attacks
->>>>>>> 642b11531c94751373ccd49a168b7111a5590bd8
         let atkName = pokeData.data[i].attacks[0].name;
         let atkCost = pokeData.data[i].attacks[0].cost;
         let atkConvertedEnergyCost = pokeData.data[i].attacks[0].convertedEnergyCost;
