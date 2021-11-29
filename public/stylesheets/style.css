@@ -96,6 +96,13 @@ body {
     margin-right: auto;
 }
 
+.forms {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .login-form {
     background-color: var(--quinary-color);
@@ -282,9 +289,10 @@ body {
     background-color: var(--quinary-color);
     border: 4px solid var(--tertiary-color);
     border-radius: 8px;
+    box-shadow: 7px 7px 12px;
     width: 30%;
     padding: 20px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .new-deck-form label {
@@ -376,7 +384,7 @@ body {
 }
 
 #deck-name {
-    font-size: 24px;
+    font-size: 18px;
 }
 
 #viewedit-btn {
@@ -556,6 +564,12 @@ body {
 .hide {
     display: none;
 }
+
+.none {
+    height: 0;
+    width: 0;
+}
+
 #game-select {
     margin:12px;
     font-size: 18px;

@@ -1,6 +1,6 @@
 <div class="card_container">
     <div class="user_card">
-        <h3 class="card-name magic_title yugi_title poke_title">
+        <h3 class="card-name magic_title yugi_title poke_title hide">
             Card Name: {{name}}
         </h3>
                 <p id="card-game" class="game_p hide">
@@ -10,6 +10,9 @@
                     {{deck_id}}
                 </p>
             {{#if magic}}
+                <h3 class="magic_title">
+                    Card Name: {{name}}
+                </h3>
                 <p class="magic_p">
                     Type: {{magic.0.typeMagic}}
                 </p>
@@ -28,6 +31,9 @@
                 <button type="button" class="delete-card-btn" id="{{id}}">Delete Card</button>
             {{/if}}
             {{#if yugis}}
+                <h3 class="yugi_title">
+                    Card Name: {{name}}
+                </h3>
                 <p class="yugi_p">
                     Attack: {{yugis.0.atkYugi}}
                 </p>
@@ -52,6 +58,9 @@
                 <button type="button" class="delete-card-btn" id="{{id}}">Delete Card</button>
             {{/if}}
             {{#if pokes}}
+                <h3 class="poke_title">
+                    Card Name: {{name}}
+                </h3>
                 <p class="poke_p">
                     HP: {{pokes.0.hpPoke}}
                 </p>
