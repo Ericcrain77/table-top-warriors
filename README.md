@@ -6,17 +6,30 @@ GitHub Repository: https://github.com/Ericcrain77/table-top-warriors
 
 ## Table of Contents
 * [Description](#description)
-* [Tutorial](#tutorial)
 * [Screenshots](#Screenshots)
 * [Questions](#questions)
 
 ## Description
-
-
-## Tutorial
-
+Table Top Warriors is a website designed for trading card game enthusiasts to create, edit, and store their deck collection. Whether the user’s deck exists in real life, or virtually, Table Top Warriors is a useful tool in organizing the three most famous trading card games in the card game market.
 
 ## Screenshots
+Landing Page
+![Landing Page]()
 
+Log In/Sign Up Page
+![Log In/Sign Up Page]()
+
+User Homepage
+![User Homepage]()
+
+Deck Creation Page
+![Deck Creation Page]()
+
+Deck Edit Page
+![Deck Edit Page]()
+
+Deck Collection Page
+![Deck Collection Page]()
 
 ## Questions
+Reach out to me using my [Github account](https://github.com/Ericcrain77) or my [email](ericcrain77@gmail.com).

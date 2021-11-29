@@ -1,0 +1,26 @@
+<h1 id="dc">Deck Collection</h1>
+
+    {{#if decks.length}}
+    <section class="collection">
+        {{#each decks as |deck|}}
+        <div class="deck">
+            
+            <div>
+                {{> deck-info deck}}
+            </div>
+
+            <div>
+                <button onclick=location.href="/dashboard/edit/{{deck.id}}" id="viewedit-btn">View/Edit</button>
+            </div>
+
+            <div>
+                <button class="delete-deck-btn" id="{{deck.id}}">Delete</button>
+            </div>
+             
+        </div>
+        {{/each}}
+    </section>
+    {{/if}}
+
+<script src="/javascript/deck-info.js"></script>
+<script src="/javascript/delete-deck.js"></script>

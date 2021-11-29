@@ -3,11 +3,36 @@
 
 <head>
 	<meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/style.css">
 	<title>Table Top Warriors</title>
 </head>
 
 <body>
-	{{{ body }}}
+	<div>
+		<header class="header">
+			<h1>
+				<image src="/images/TTW-Header-Logo.png" alt="Table Top Warriors Logo 2" onclick=location.href='/' />
+			</h1>
+			<nav class="header-nav">
+				{{#if loggedIn}}
+				{{!-- If user is logged in display logout button --}}
+				<a class="login-signup-btn" href="/dashboard">Dashboard</a>
+				<a href="/" id="logout-btn">Logout</a>
+				{{else}}
+				{{!-- If user is not logged in display link to login page --}}
+				<button onclick=location.href='/login' class="login-signup-btn">Log In / Sign Up</button>
+				{{/if}}
+			</nav>
+		</header>
+
+		<main>
+			{{{ body }}}
+		</main>
+	
+	{{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+	</div>
 </body>
 
 </html>

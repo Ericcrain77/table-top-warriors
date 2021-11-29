@@ -1,0 +1,48 @@
+<section class="edit-screen">
+    <form class="edit-deck-form">
+        <div>
+            <input name="deck-name" type="text" value="{{cards.0.deck.deck_name}}" /> 
+            <button type="submit">Save Deck Name</button>
+        </div>
+    </form> 
+
+    <form class="new-card-form">
+        <label for="card-name">Card Search:</label>
+        <input type="text" id="card-name" name="card-name" placeholder="Enter card name here" />
+        <h4>Type a word, phrase, or full card name and hit enter to search</h4>
+        <br>
+        <button type="submit">Search</button>
+    </form>
+
+    <section id="card-game" class="hide">
+        {{cards.0.deck.game}}
+    </section>
+    <section id="deck-id" class="hide">
+        {{cards.0.deck.id}}
+    </section>
+
+    <div class="searched-cards-container">
+        
+    </div>
+
+    <div class="user-cards-container">
+    {{#if cards.length}}
+        <h2>Your cards</h2>
+        <div>
+            <div>
+            {{#each cards as |card|}}
+
+                {{>card-info card}}
+
+            {{/each}}
+            </div>
+        </div>
+    {{else}}
+        <h4>You do not have any cards in this deck!</h4>
+    {{/if}}
+    </div>
+</section>
+
+<script src="/javascript/add-card.js"></script>
+<script src="/javascript/delete-card.js"></script>
+<script src="/javascript/edit-deck.js"></script>

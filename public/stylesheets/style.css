@@ -1,0 +1,584 @@
+:root {
+    --primary-color: #3C2FFE;
+    --secondary-color: #6229E6;
+    --tertiary-color: #858585;
+    --quaternary-color: #000000;
+    --quinary-color: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.header {
+    background-color: var(--tertiary-color);
+    border-bottom: 1px solid var(--quinary-color);
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-logo {
+    display: flex;
+    padding: 10px 0 10px 15px;
+    height: auto;
+    width: 15%;
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-signup-btn {
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    font-size: 24px;
+    padding: 10px;
+    margin-right: 20px;
+    border: 4px solid var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    height: auto;
+    width: auto;
+    text-decoration: none;
+}
+
+.login-signup-btn:hover {
+    background-color: var(--quinary-color);
+    color: var(--quaternary-color);
+}
+
+#logout-btn {
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    font-size: 24px;
+    padding: 10px;
+    margin-right: 20px;
+    border: 4px solid var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    height: auto;
+    width: auto;
+    text-decoration: none;
+}
+
+#logout-btn:hover {
+    background-color: var(--quinary-color);
+    color: var(--quaternary-color);
+}
+
+.forms {
+    display: flex;
+    height: auto;
+    width: auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#main-logo {
+    height: 350px;
+    margin: 60px 60px 60px 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.login-form {
+    background-color: var(--quinary-color);
+    border: 4px solid var(--tertiary-color);
+    box-shadow: 7px 7px 12px;
+    border-radius: 8px;
+    align-items: center;
+    padding: 48px 40px 48px 20px;
+    font-size: 18px;
+}
+
+.login-form label {
+    display: inline-block;
+    text-align: center;
+    width: 136px;
+    padding-bottom: 30px;
+}
+
+.login-form input {
+    width: 180px;
+    height: 22px;
+}
+
+.login-form button {
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 5px;
+    opacity: 0.6;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.login-form button:hover {
+    opacity: 1;
+}
+
+.signup-form {
+    background-color: var(--quinary-color);
+    border: 4px solid var(--tertiary-color);
+    box-shadow: 7px 7px 12px;
+    border-radius: 8px;
+    align-items: center;
+    padding: 39px 40px 39px 20px;
+    font-size: 18px;
+}
+
+.signup-form label {
+    display: inline-block;
+    text-align: center;
+    width: 136px;
+    padding-bottom: 20px;
+}
+
+.signup-form input {
+    width: 180px;
+    height: 22px;
+}
+
+
+.signup-form button {
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 5px;
+    opacity: 0.6;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.signup-form button:hover {
+    opacity: 1;
+}
+
+#home-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align:center;
+    margin: 150px;
+    padding: 40px;
+    border: 4px solid var(--quaternary-color);
+    box-shadow: 7px 7px 12px;
+    border-radius: 15px;
+    background-color: var(--tertiary-color);
+}
+
+#search-box {
+    font-size: 18px;
+    color: var(--quaternary-color);
+    padding: 5px;
+    width: 50%;
+    border-radius: 8px;
+    border: 0px;
+}
+
+#home-search-btn {
+    margin-left: 10px;
+    font-size: 18px;
+    padding: 5px;
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 5px;
+    text-align: center;
+    display: block;
+}
+
+#home-search-btn:hover {
+    color: var(--quaternary-color);
+    background-color: var(--quinary-color);
+}
+
+.home-game-logos {
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    align-items: center;
+    align-content: center;
+}
+
+#home-pokemon {
+    height: 20%;
+    width: 20%;
+}
+
+#home-mtg {
+    height: 20%;
+    width: 20%;
+}
+
+#home-yugioh {
+    height: 20%;
+    width: 20%;
+}
+
+.user-btns {
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    align-items: center;
+    align-content: center;
+}
+
+#create-btn {
+    display: flex;
+    font-size: 28px;
+    padding: 10px 18px 10px 18px;
+    border: 2px solid var(--quinary-color);
+    background-color: var(--quinary-color);
+    border-radius: 8px;
+    margin: 200px 0 150px 0;
+}
+
+#create-btn:hover {
+    background-color: var(--tertiary-color);
+}
+
+#collection-btn {
+    display: flex;
+    font-size: 28px;
+    padding: 10px;
+    border: 2px solid var(--quinary-color);
+    background-color: var(--quinary-color);
+    border-radius: 8px;
+    margin: 200px 0 150px 0;
+}
+
+#collection-btn:hover {
+    background-color: var(--tertiary-color);
+}
+
+.new-deck-form {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--quinary-color);
+    border: 4px solid var(--tertiary-color);
+    border-radius: 8px;
+    width: 30%;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.new-deck-form label {
+    display: inline-block;
+    text-align: center;
+    width: 250px;
+    padding: 15px;
+}
+
+.new-deck-form select {
+    width: 180px;
+    height: 22px;
+}
+
+.new-deck-form input {
+    width: 180px;
+    height: 22px;
+}
+
+#create-deck-btn {
+    margin: 20px auto;
+    margin-bottom: 5px;
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 5px;
+    opacity: 0.6;
+    text-align: center;
+    display: block;
+}
+
+#create-deck-btn:hover {
+    opacity: 1;
+}
+
+#dc {
+    color: var(--quinary-color);
+    font-size: 50px;
+    font-weight: bold;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--quinary-color); */
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    align-items: center;
+    align-content: center;
+    margin: 50px;
+}
+
+#decks {
+    color: var(--quaternary-color);
+    font-size: 32px;
+    font-weight: 900;
+    -webkit-text-stroke-width: 0.75px;
+    -webkit-text-stroke-color: var(--quinary-color);
+    margin: 20px;
+}
+
+.collection {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+}
+
+.deck {
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    align-items: center;
+    border: 4px solid var(--tertiary-color);
+    border-radius: 8px;
+    box-shadow: 7px 7px 12px;
+    background-color: var(--quinary-color);
+    height: 150px;
+    width: 75%;
+    margin: 15px;
+}
+
+#deck-logo {
+    height: 100px;
+}
+
+#deck-name {
+    font-size: 24px;
+}
+
+#viewedit-btn {
+    margin: 20px auto;
+    margin-bottom: 5px;
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 8px;
+    opacity: 0.6;
+    text-align: center;
+    display: block;
+}
+
+#viewedit-btn:hover {
+    opacity: 1;
+}
+
+#delete-deck-btn {
+    margin: 20px auto;
+    margin-bottom: 5px;
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 8px;
+    opacity: 0.6;
+    text-align: center;
+    display: block;
+}
+
+.delete-deck-btn {
+    margin: 20px auto;
+    margin-bottom: 5px;
+    color: var(--quinary-color);
+    background-color: var(--primary-color);
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 8px;
+    opacity: 0.6;
+    text-align: center;
+    display: block;
+}
+
+#delete-deck-btn:hover {
+    opacity: 1;
+}
+
+.edit-screen {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    width: 80%;
+    color: var(--quinary-color);
+}
+
+.edit-screen div {
+    margin: 25px;
+    font-size: 28px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.edit-screen div h4 {
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.edit-screen div h2 {
+    font-size: 28px;
+}
+
+.edit-screen div input {
+    margin-left: 5px;
+    width: 45%;
+    height: 28px;
+    font-size: 18px;
+    box-shadow: 3px 3px 3px;
+    padding: 0 4px 0 4px;
+}
+
+.edit-screen div button {
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid var(--quinary-color);
+    background-color: var(--quinary-color);
+    border-radius: 8px;
+}
+
+.edit-screen div button:hover {
+    background-color: var(--tertiary-color);
+    color: var(--quinary-color);
+}
+
+.edit-screen div textarea {
+    height: 400px;
+    width: 45%;
+    font-size: 18px;
+    margin-top: 15px;
+    resize: none;
+    box-shadow: 5px 5px 10px;
+}
+
+.edit-screen button {
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid var(--quinary-color);
+    background-color: var(--quinary-color);
+    border-radius: 8px;
+}
+
+.edit-screen button:hover {
+    background-color: var(--tertiary-color);
+    color: var(--quinary-color);
+}
+
+.searched-cards-container,
+.user-cards_container {
+    justify-content: center;
+}
+
+.card_container {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    height: fit-content;
+    margin: 0;
+}
+.searched_card,
+.user_card {
+    border: solid 3px var(--tertiary-color);
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    float: left;
+    height: fit-content;
+}
+
+.magic_title,
+.yugi_title,
+.poke_title {
+    font-size: 24px;
+
+}
+
+.game_p,
+.magic_p,
+.yugi_p,
+.poke_p {
+    font-size: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+/* .magic_btn,
+.yugi_btn,
+.poke_p {
+
+    
+} */
+
+.hide {
+    display: none;
+}
+#game-select {
+    margin:12px;
+    font-size: 18px;
+    color: var(--quaternary-color);
+    padding: 5px;
+    width: 20%;
+    border-radius: 8px;
+    border: 0px;
+}
+
+#cardbox {
+    width:100%;
+    display: flex wrap;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.displaycards {
+    margin:4px;
+    padding: 4px;
+    border-radius: 8px;
+    background-color: #3C2FFE;
+}
+

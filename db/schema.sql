@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS warriors_db;
+
+CREATE DATABASE warriors_db;

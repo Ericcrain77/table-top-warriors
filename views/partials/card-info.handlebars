@@ -1,0 +1,103 @@
+<div class="card_container">
+    <div class="user_card">
+        <h3 class="card-name magic_title yugi_title poke_title">
+            Card Name: {{name}}
+        </h3>
+                <p id="card-game" class="game_p hide">
+                    {{game}}
+                </p>
+                <p id="deck-id" class="game_p hide">
+                    {{deck_id}}
+                </p>
+            {{#if magic}}
+                <p class="magic_p">
+                    Type: {{magic.0.typeMagic}}
+                </p>
+                <p class="magic_p">
+                    Description: {{magic.0.textMagic}}
+                </p>
+                <p class="magic_p">
+                    Color(s): {{magic.0.colorsMagic}}, {{magic.0.colorIdentityMagic}}
+                </p>
+                <p class="magic_p">
+                    Mana Cost: {{magic.0.manaCostMagic}}
+                </p>
+                <p class="magic_p">
+                    Converted Mana Cost: {{magic.0.cmcMagic}}
+                </p>
+                <button type="button" class="delete-card-btn" id="{{id}}">Delete Card</button>
+            {{/if}}
+            {{#if yugis}}
+                <p class="yugi_p">
+                    Attack: {{yugis.0.atkYugi}}
+                </p>
+                <p class="yugi_p">
+                    Defense: {{yugis.0.defYugi}}
+                </p>
+                <p class="yugi_p">
+                    Level: {{yugis.0.levelYugi}}
+                </p>
+                <p class="yugi_p">
+                    Attribute: {{yugis.0.attributeYugi}}
+                </p>
+                <p class="yugi_p">
+                    Race: {{yugis.0.raceYugi}}
+                </p>
+                <p class="yugi_p">
+                    Type: {{yugis.0.typeYugi}}
+                </p>
+                <p class="yugi_p">
+                    Description: {{yugis.0.descYugi}}
+                </p>
+                <button type="button" class="delete-card-btn" id="{{id}}">Delete Card</button>
+            {{/if}}
+            {{#if pokes}}
+                <p class="poke_p">
+                    HP: {{pokes.0.hpPoke}}
+                </p>
+                <p class="poke_p">
+                    Supertype: {{pokes.0.supertypePoke}}
+                </p>
+                <p class="poke_p">
+                    Type(s): {{pokes.0.typesPoke}}
+                </p>
+                <p class="poke_p">
+                    Subtype(s): {{pokes.0.subtypesPoke}}
+                </p>
+                <p class="poke_p">
+                    Evolves to: {{pokes.0.evolvesToPoke}}
+                </p>
+                <p class="poke_p">
+                    Ability name(s): {{pokes.0.abilitiesPoke.0.name}}
+                </p>
+                <p class="poke_p">
+                    Ability text(s): {{pokes.0.abilitiesPoke.0.text}}
+                </p>
+                <p class="poke_p">
+                    Ability type(s): {{pokes.0.abilitiesPoke.0.type}}
+                </p>
+                <p class="poke_p">
+                    Attack name(s): {{pokes.0.attacksPoke.0.name}}
+                </p>
+                <p class="poke_p">
+                    Attack cost(s): {{pokes.0.attacksPoke.0.cost}}
+                </p>
+                <p class="poke_p">
+                    Attack converted energy cost(s): {{pokes.0.attacksPoke.0.convertedEnergyCost}}
+                </p>
+                <p class="poke_p">
+                    Attack damage(s): {{pokes.0.attacksPoke.0.damage}}
+                </p>
+                <p class="poke_p">
+                    Attack text(s): {{pokes.0.attacksPoke.0.text}}
+                </p>
+                <p class="poke_p">
+                    Weaknesses: {{pokes.0.weaknessesPoke.0.type}} {{pokes.0.weaknessesPoke.0.value}}
+                </p>
+                <p class="poke_p">
+                    Retreat cost: {{pokes.0.retreatCostPoke}}
+                </p>
+                <button type="button" class="delete-card-btn" id="{{id}}">Delete Card</button>
+            {{/if}}
+        </div>
+</div>
