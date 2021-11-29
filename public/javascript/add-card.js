@@ -403,7 +403,7 @@ async function pokeCardSearchRender(data) {
         pokeRetreatCostEl.classList.add('poke_p');
         pokeRetreatCostEl.setAttribute('id', `poke_rt_cost_${i}`)
         pokeRetreatCostEl.textContent = `Retreat Cost: ` + retreatCostPoke;
-        searchedCardListDiv.appendChild(pokeNameEl);
+        searchedCardListDiv.appendChild(pokeRetreatCostEl);
 
         // Create button to add card to deck
         let pokeAddButton = document.createElement("button");
@@ -464,7 +464,7 @@ async function yugiCardCreationHandler(event) {
     let deck_id = document.querySelector('#deck-id').innerText.trim();
     let game = document.querySelector('#card-game').innerText.trim();
 
-    let dataI = event.target.className.split('_')[2];
+    let dataI = event.target.id.split('_')[2];
 
     let name = yugiData.data[dataI].name;
     let levelYugi = yugiData.data[dataI].level;
@@ -507,6 +507,8 @@ async function pokeCardCreationHandler(event) {
     let deck_id = document.querySelector('#deck-id').innerText.trim();
     let game = document.querySelector('#card-game').innerText.trim();
 
+    console.log(deck_id, game)
+
     let dataI = event.target.id.split('_')[2];
 
     let name = pokeData.data[dataI].name;
@@ -515,9 +517,24 @@ async function pokeCardCreationHandler(event) {
     let hpPoke = pokeData.data[dataI].hp;
     let typesPoke = pokeData.data[dataI].types;
     let evolvesToPoke = pokeData.data[dataI].evolvesTo;
-    let abilName = pokeData.data[dataI].abilities[0].name;
-    let abilText = pokeData.data[dataI].abilities[0].text;
-    let abilType = pokeData.data[dataI].abilities[0].type;
+    let abilName;
+    let abilText;
+    let abilType;
+    if (pokeData.data[dataI].abilities === undefined) {
+        abilName = "";
+    } else {
+        abilName = pokeData.data[dataI].abilities[0].name
+    }
+    if (pokeData.data[dataI].abilities === undefined) {
+        abilText = "";
+    } else {
+        abilText = pokeData.data[dataI].abilities[0].text
+    }
+    if (pokeData.data[dataI].abilities === undefined) {
+        abilType = "";
+    } else {
+        abilType = pokeData.data[dataI].abilities[0].type
+    }
     let abilitiesPoke = [
         {
             name: abilName,
