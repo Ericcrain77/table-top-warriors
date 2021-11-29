@@ -1,7 +1,7 @@
 async function deleteDeckHandler(event) {
     event.preventDefault();
 
-    const id = document.querySelector("#deck-id").innerHTML.trim();
+    const id = event.target.id;
 
     const response = await fetch(`/api/decks/${id}`,{
         method: 'DELETE'
@@ -14,4 +14,9 @@ async function deleteDeckHandler(event) {
     }
 }
 
-document.querySelector('#delete-deck-btn').addEventListener('click', deleteDeckHandler);
+const buttons = document.getElementsByClassName("delete-deck-btn");
+
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", deleteDeckHandler);
+};
+

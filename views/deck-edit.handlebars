@@ -14,27 +14,33 @@
         <button type="submit">Search</button>
     </form>
 
-    <div id="card-game">
+    <section id="card-game" class="hide">
         {{cards.0.deck.game}}
-    </div>
-    <div id="deck-id" >
+    </section>
+    <section id="deck-id" class="hide">
         {{cards.0.deck.id}}
-    </div>
+    </section>
 
     <div class="searched-cards-container">
         
     </div>
 
+    <div class="user-cards-container">
     {{#if cards.length}}
-    <h4>Your cards</h4>
-    {{#each cards as |card|}}
+        <h2>Your cards</h2>
         <div>
-            {{>card-info card}}
+            <div>
+            {{#each cards as |card|}}
+
+                {{>card-info card}}
+
+            {{/each}}
+            </div>
         </div>
-    {{/each}}
     {{else}}
-    <h4>You do not have any cards in this deck!</h4>
+        <h4>You do not have any cards in this deck!</h4>
     {{/if}}
+    </div>
 </section>
 
 <script src="/javascript/add-card.js"></script>
