@@ -1,8 +1,8 @@
 async function deckCreationHandler(event) {
     event.preventDefault();
 
-    const deck_name = document.querySelector('input[name="deck-name"]').value;
-    const game = document.querySelector('select[name="game-name"]').value;
+    const deck_name = document.querySelector('input[name="deck-name"]').value.trim();
+    const game = document.querySelector('select[name="game-name"]').value.trim();
 
     const response = await fetch(`/api/decks`, {
         method: 'POST',

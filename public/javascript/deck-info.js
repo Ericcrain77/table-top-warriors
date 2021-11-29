@@ -7,7 +7,7 @@ function gamePictures() {
         let game = elem[i].innerText;
         if (game === "Magic: The Gathering") {
             elem[i].innerHTML = `<image src="../images/Magic-The-Gathering-Logo.png" alt="Game Logo" id="deck-logo" />`;
-        } else if (game === "YuGiOh!") {
+        } else if (game === "YuGiOh") {
             elem[i].innerHTML = `<image src="../images/Yu-Gi-Oh!-Logo.png" alt="Game Logo" id="deck-logo" />`;
         } else if (game === "Pokemon") {
             elem[i].innerHTML = `<image src="../images/Pokemon-Logo.png" alt="Game Logo" id="deck-logo" />`;

@@ -564,6 +564,12 @@ body {
 .hide {
     display: none;
 }
+
+.none {
+    height: 0;
+    width: 0;
+}
+
 #game-select {
     margin:12px;
     font-size: 18px;

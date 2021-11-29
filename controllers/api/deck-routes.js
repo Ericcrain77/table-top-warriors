@@ -53,7 +53,14 @@ router.post('/', withAuth, (req, res) => {
         game: req.body.game,
         user_id: req.session.user_id
     })
-    .then(dbDeckData => res.json(dbDeckData))
+    .then(dbDeckData => {
+        Card.create({
+            name: "test-card",
+            game: dbDeckData.game,
+            deck_id: dbDeckData.id
+        })
+        res.json(dbDeckData);
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
