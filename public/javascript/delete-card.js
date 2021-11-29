@@ -13,5 +13,6 @@ async function deleteCardHandler(event) {
         alert(response.statusText);
     }
 }
-
+if(document.querySelector('.delete-card-btn')) {
 document.querySelector('.delete-card-btn').addEventListener('click', deleteCardHandler);
+}

@@ -242,11 +242,11 @@ async function pokeCardSearchRender(data) {
         let hpPoke = pokeData.data[i].hp;
         let typesPoke = pokeData.data[i].types;
         let evolvesToPoke = pokeData.data[i].evolvesTo;
-        // Abilities
+        Abilities
         let abilName = pokeData.data[i].abilities[0].name;
         let abilText = pokeData.data[i].abilities[0].text;
         let abilType = pokeData.data[i].abilities[0].type;
-        // Attacks
+        Attacks
         let atkName = pokeData.data[i].attacks[0].name;
         let atkCost = pokeData.data[i].attacks[0].cost;
         let atkConvertedEnergyCost = pokeData.data[i].attacks[0].convertedEnergyCost;
@@ -490,7 +490,7 @@ async function pokeCardCreationHandler(event) {
     let deck_id = document.querySelector('#deck-id').innerText;
     let game = document.querySelector('#card-game').innerText;
 
-    let dataI = event.target.className.split('_')[2];
+    let dataI = event.target.id.split('_')[2];
 
     let name = pokeData.data[dataI].name;
     let supertypePoke = pokeData.data[dataI].supertype;

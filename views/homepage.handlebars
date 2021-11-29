@@ -1,4 +1,4 @@
-<form class="home-search">
+<form id="home-search">
     <input type="text" placeholder="Search Card Name Here" id="search-box" name="card-name" />
     <select name="game-select" id='game-select' required>
         <option value="">Select a Game</option>
@@ -8,8 +8,14 @@
     </select>
     <button type="submit" id="home-search-btn">Search</button>
 </form>
+<video id="webcam" autoplay playsinline width="640" height="480"></video>
+<div>
+    <canvas id="canvas" class="d-none">
+    </canvas>
+        <button id='take-pic' type="button" onclick="camera()"></button>
+        <img id="downloaded-photo"></img>
+</div>
 <div id='cardbox'>
-    {{!-- <img src='' id="card-pic" /> --}}
 </div>
 <section class="home-game-logos">
     <image src="/images/Pokemon-Logo.png" alt="Pokemon Logo" id="home-pokemon" />
@@ -18,5 +24,6 @@
 </section>
 
 <script src="/javascript/poke.js"></script>
-{{!-- <script src="/javascript/magic.js"></script>
-<script src="/javascript/yugi.js"></script> --}}
+
+
+

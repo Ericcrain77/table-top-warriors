@@ -176,7 +176,7 @@ body {
     opacity: 1;
 }
 
-.home-search {
+#home-search {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -238,15 +238,6 @@ body {
 #home-yugioh {
     height: 20%;
     width: 20%;
-}
-
-#cardbox {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .user-btns {
@@ -524,4 +515,6 @@ body {
     margin:4px;
     padding: 4px;
     border-radius: 8px;
+    background-color: #3C2FFE;
 }
+

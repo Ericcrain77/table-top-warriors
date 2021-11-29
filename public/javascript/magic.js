@@ -27,3 +27,26 @@
 // }
 
 // document.querySelector('.home-search').addEventListener('submit', cardSearchHandler);
+// const webcamElement = document.getElementById('webcam');
+// const canvasElement = document.getElementById('canvas');
+// const savepic = document.querySelector('#canvas');
+// const webcam = new Webcam(webcamElement, 'user', canvasElement);
+// webcam.start();
+// let photo = webcam.snap();
+// console.log(photo);
+// // var image = new Image();
+// // //Just getting the source from the span. It was messy in JS.
+// // image.src = photo
+// // document.body.appendChild(image);
+// var img = document.createElement('img');
+// img.setAttribute('class', 'displaycard');
+// img.setAttribute('src', photo);
+// savepic.appendChild(img);
+// // document.getElementById('save-photo').innerHTML = 
+// // '<img src="'+photo+'"/>';
+
+// function profilePic() {
+//     webcam.start();
+
+
+    
