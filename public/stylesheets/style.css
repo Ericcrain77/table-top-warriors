@@ -596,3 +596,146 @@ body {
     background-color: #3C2FFE;
 }
 
+@media screen and (max-width: 980px) {
+    #home-pokemon {
+        height: 30%;
+        width: 30%;
+        margin-top: 10px;
+    }
+    
+    #home-mtg {
+        height: 30%;
+        width: 30%;
+        margin-top: 10px;
+    }
+    
+    #home-yugioh {
+        height: 30%;
+        width: 30%;
+        margin-top: 40px;
+    }
+
+    #create-btn {
+        margin: 80px;
+        font-size: 18px;
+    }
+
+    #collection-btn {
+        margin: 80px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #header-logo {
+        padding: 0;
+        width: 100%;
+        justify-content: center;
+        margin: 0;
+    }
+    
+    #home-search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align:center;
+        margin: auto;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        border-radius: none;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .home-game-logos {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+        align-content: center;
+    }
+
+    #home-pokemon {
+        height: 30%;
+        width: 30%;
+        margin-top: 10px;
+    }
+    
+    #home-mtg {
+        height: 30%;
+        width: 30%;
+        margin-top: 10px;
+    }
+    
+    #home-yugioh {
+        height: 30%;
+        width: 30%;
+        margin-top: 40px;
+    }
+
+    #home-search-btn {
+        margin-left: 0px;
+        font-size: 18px;
+        padding: 5px;
+        color: var(--quaternary-color);
+        background-color: var(--quinary-color);
+        border: none;
+        border-radius: 8px;
+        padding: 5px;
+        text-align: center;
+        display: block;
+    }
+    
+    #home-search-btn:hover {
+        color: var(--quinary-color);
+        background-color: var(--quaternary-color);
+    }
+
+    #main-logo {
+        width: 40%;
+        height: 40%;
+    }
+
+    .forms {
+        flex-direction: column;
+    }
+
+    .login-form {
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        text-align: center;
+        justify-content: center;
+        border-radius: 0px;
+    }
+
+    .signup-form {
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        justify-content: center;
+        text-align: center;
+        border-radius: 0px;
+        border-top: 4px solid var(--tertiary-color);
+    }
+
+    .user-btns {
+        flex-direction: column;
+    }
+
+    #create-btn {
+        margin: 30px;
+        font-size: 12px;
+    }
+
+    #collection-btn {
+        margin: 30px;
+        font-size: 12px;
+    }
+}
+
+/* @media screen and (max-width: 575px) {
+
+} */
